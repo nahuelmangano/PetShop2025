@@ -50,10 +50,9 @@ namespace BE
             Cliente = 5
         }
 
-        private int _perfilUsuario;
+        private PerfilUsuario _perfilUsuario;
 
-
-        public int Perfil
+        public PerfilUsuario Perfil
         {
             get { return _perfilUsuario; }
             set { _perfilUsuario = value; }
