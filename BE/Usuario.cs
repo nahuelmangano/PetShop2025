@@ -8,6 +8,14 @@ namespace BE
 {
     public class Usuario
     {
+        private int _id;
+
+        public int Id
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
+
         private string _nombre;
         public string Nombre
         {
@@ -45,9 +53,10 @@ namespace BE
         {
             Administrador = 1,
             Gerente = 2,
-            Ventas = 3,
-            Compras = 4,
-            Cliente = 5
+            Veterinario = 3,
+            Ventas = 4,
+            Compras = 5,
+            Cliente = 6
         }
 
         private PerfilUsuario _perfil;
