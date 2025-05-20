@@ -26,7 +26,7 @@ namespace DAL
         {
             Conexion db = new Conexion();
             string query = string.Format("INSERT INTO T_Usuario([nombre_Usuario],[apellido_Usuario], [mail_Usuario],[password_Usuario],[perfil_Usuario])" +
-                "VALUES('{0}', '{1}', '{2}', '{3}', {4})", usuario.NombreUsuario, usuario.ApellidoUsuario, usuario.EmailUsuario, usuario.PasswordUsuario, usuario.Perfil);
+                "VALUES('{0}', '{1}', '{2}', '{3}', {4})", usuario.Nombre, usuario.Apellido, usuario.Email, usuario.Password, usuario.Perfil);
             db.EscribirPorComando(query);
 
 
@@ -36,7 +36,7 @@ namespace DAL
         {
             Conexion db = new Conexion();
             string query = string.Format("INSERT INTO T_Usuario([nombre_Usuario],[apellido_Usuario], [mail_Usuario],[password_Usuario],[perfil_Usuario])" +
-                "VALUES('{0}', '{1}', '{2}', '{3}', {4})", usuario.NombreUsuario, usuario.ApellidoUsuario, usuario.EmailUsuario, usuario.PasswordUsuario, usuario.Perfil);
+                "VALUES('{0}', '{1}', '{2}', '{3}', {4})", usuario.Nombre, usuario.Apellido, usuario.Email, usuario.Password, usuario.Perfil);
             db.EscribirPorComando(query);
 
 
@@ -57,8 +57,8 @@ namespace DAL
             {
                 BE.Usuario unUsuario = new BE.Usuario();
 
-                unUsuario.PasswordUsuario = fila["password_Usuario"].ToString();
-                unUsuario.EmailUsuario = fila["mail_Usuario"].ToString();
+                unUsuario.Password = fila["password_Usuario"].ToString();
+                unUsuario.Email = fila["mail_Usuario"].ToString();
 
                 usuarios.Add(unUsuario);
 
