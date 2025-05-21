@@ -60,12 +60,36 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="UI_LogIn\FormLogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_LogIn\FormLogIn.Designer.cs">
+      <DependentUpon>FormLogIn.cs</DependentUpon>
+    </Compile>
+>>>>>>> 9658605068ce0a334b970ad665f8dd0a83e65ec9
     <Compile Include="UI_Veterinario\AgregarMedicamento.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI_Veterinario\AgregarMedicamento.Designer.cs">
       <DependentUpon>AgregarMedicamento.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="UI_Veterinario\GestionarMedicamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Veterinario\GestionarMedicamentos.Designer.cs">
+      <DependentUpon>GestionarMedicamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Veterinario\MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Veterinario\MenuPrincipal.Designer.cs">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </Compile>
+>>>>>>> 9658605068ce0a334b970ad665f8dd0a83e65ec9
     <EmbeddedResource Include="f_LogIn.resx">
       <DependentUpon>f_LogIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -81,8 +105,19 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <EmbeddedResource Include="UI_Veterinario\AgregarMedicamento.resx">
       <DependentUpon>AgregarMedicamento.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="UI_LogIn\FormLogIn.resx">
+      <DependentUpon>FormLogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Veterinario\GestionarMedicamentos.resx">
+      <DependentUpon>GestionarMedicamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Veterinario\MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+>>>>>>> 9658605068ce0a334b970ad665f8dd0a83e65ec9
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

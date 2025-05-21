@@ -8,6 +8,26 @@ namespace BLL
 {
     public class Usuario
     {
+        public BE.Usuario ValidarUsuario(string unEmail, string unaPassword)
+        {
+
+            if (string.IsNullOrWhiteSpace(unEmail))
+            {
+                throw new BE.ExcepcionDeNegocio("Falta completar el nombre de usuario");
+            }
+
+            if (string.IsNullOrWhiteSpace(unaPassword))
+            {
+                throw new BE.ExcepcionDeNegocio("Falta completar la contraseña de usuario");
+            }
+
+            //Es porque tiene nombre y password
+
+            DAL.Usuario dalUsuario = new DAL.Usuario();
+
+            return dalUsuario.ValidarUsuario(unEmail, unaPassword);
+        }
+
         public bool CrearUsuario(BE.Usuario usuario)
         {
 

@@ -130,21 +130,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.numStockMinimo);
-            this.Controls.Add(this.numStockActual);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.tboxNombre);
-            this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnAgregar);
-            this.Name = "AgregarMedicamento";
-            this.Text = "Agregar Medicamento";
-            ((System.ComponentModel.ISupportInitialize)(this.numStockActual)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numStockMinimo)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
         }
 
         #endregion

@@ -16,7 +16,7 @@ namespace PetShop_2025
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new f_LogIn());
+            Application.Run(new UI_LogIn.FormLogIn());
         }
     }
 }
