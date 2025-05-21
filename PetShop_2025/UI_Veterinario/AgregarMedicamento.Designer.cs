@@ -121,6 +121,10 @@
             this.numStockMinimo.Size = new System.Drawing.Size(120, 20);
             this.numStockMinimo.TabIndex = 11;
             // 
+
+            this.SuspendLayout();
+            // 
+
             // AgregarMedicamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,7 +145,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numStockMinimo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
