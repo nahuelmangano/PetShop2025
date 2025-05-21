@@ -25,6 +25,59 @@ namespace PetShop_2025.UI_LogIn
             try
             {
                 beUsuario = bllUsuario.ValidarUsuario(txtEmail.Text, txtPassword.Text);
+                if (beUsuario == null)
+                {
+                    MessageBox.Show("Usuario o clave es invalido");
+                }
+                else
+                {
+                    const int idPerfilGerente = 1;
+                    const int idPerfilAdministrador = 2;
+                    const int idPerfilVeterinario = 3;
+                    const int idPerfilVendedor = 4;
+
+                    Form formularioDeUsuario;
+
+
+                    switch (beUsuario.Perfil.ID)
+                    {
+                        case idPerfilGerente:
+                            /* Ejemplo de como abrir un formulario diferente dependiendo del perfil
+                             * formularioDeUsuario = new OtroFormulario();
+                             * this.Hide();
+                             * formularioDeUsuario.ShowDialog();
+                            */
+                            break;
+
+                        case idPerfilAdministrador:
+                            /* Ejemplo de como abrir un formulario diferente dependiendo del perfil
+                             * formularioDeUsuario = new OtroFormulario();
+                             * this.Hide();
+                             * formularioDeUsuario.ShowDialog();
+                            */
+                            break;
+
+                        case idPerfilVeterinario:
+                            //Ejemplo de como abrir un formulario diferente dependiendo del perfil
+                            formularioDeUsuario = new UI_Veterinario.MenuPrincipal();
+                            this.Hide();
+                            formularioDeUsuario.ShowDialog();
+
+                            break;
+
+                        case idPerfilVendedor:
+                            /* Ejemplo de como abrir un formulario diferente dependiendo del perfil
+                             * formularioDeUsuario = new OtroFormulario();
+                             * this.Hide();
+                             * formularioDeUsuario.ShowDialog();
+                            */
+                            break;
+
+                        default:
+
+                            break;
+                    }
+                }
             }
             catch (BE.ExcepcionDeNegocio excepcionPersonalizada)
             {
@@ -35,60 +88,6 @@ namespace PetShop_2025.UI_LogIn
             {
                 beUsuario = null;
                 MessageBox.Show("Ocurrió una Exception: " + ex.Message);
-            }
-
-            if (beUsuario == null)
-            {
-                MessageBox.Show("Usuario o clave es invalido");
-            }
-            else
-            {
-                const int idPerfilGerente = 1;
-                const int idPerfilAdministrador = 2;
-                const int idPerfilVeterinario = 3;
-                const int idPerfilVendedor = 4;
-
-                Form formularioDeUsuario;
-
-
-                switch (beUsuario.Perfil.ID)
-                {
-                    case idPerfilGerente:
-                        /* Ejemplo de como abrir un formulario diferente dependiendo del perfil
-                         * formularioDeUsuario = new OtroFormulario();
-                         * this.Hide();
-                         * formularioDeUsuario.ShowDialog();
-                        */
-                        break;
-
-                    case idPerfilAdministrador:
-                        /* Ejemplo de como abrir un formulario diferente dependiendo del perfil
-                         * formularioDeUsuario = new OtroFormulario();
-                         * this.Hide();
-                         * formularioDeUsuario.ShowDialog();
-                        */
-                        break;
-
-                    case idPerfilVeterinario:
-                        //Ejemplo de como abrir un formulario diferente dependiendo del perfil
-                        formularioDeUsuario = new UI_Veterinario.MenuPrincipal();
-                        this.Hide();
-                        formularioDeUsuario.ShowDialog();
-
-                        break;
-
-                    case idPerfilVendedor:
-                        /* Ejemplo de como abrir un formulario diferente dependiendo del perfil
-                         * formularioDeUsuario = new OtroFormulario();
-                         * this.Hide();
-                         * formularioDeUsuario.ShowDialog();
-                        */
-                        break;
-
-                    default:
-                        
-                        break;
-                }
             }
         }
 

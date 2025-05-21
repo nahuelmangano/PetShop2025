@@ -122,7 +122,7 @@ namespace DAL
 
             usuarioDeRetorno.Perfil = new BE.Perfil();
             usuarioDeRetorno.Perfil.ID = int.Parse(dt.Rows[primeraFila]["IdPerfil"].ToString());
-            usuarioDeRetorno.Perfil.Descripcion = dt.Rows[primeraFila]["Descripción"].ToString();
+            usuarioDeRetorno.Perfil.Descripcion = dt.Rows[primeraFila]["Descripcion"].ToString();
 
             return usuarioDeRetorno;
         }
