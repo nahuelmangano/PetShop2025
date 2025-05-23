@@ -42,26 +42,18 @@ namespace PetShop_2025.UI_LogIn
                     switch (beUsuario.Perfil.ID)
                     {
                         case idPerfilGerente:
-                            /* Ejemplo de como abrir un formulario diferente dependiendo del perfil
-                             * formularioDeUsuario = new OtroFormulario();
-                             * this.Hide();
-                             * formularioDeUsuario.ShowDialog();
-                            */
+                            formularioDeUsuario = new UI_Gerente.FormReportes();
+                            this.Hide();
+                            formularioDeUsuario.ShowDialog();
                             break;
 
                         case idPerfilAdministrador:
                             formularioDeUsuario = new UI_Administrador.FormPanelAdmin();
                             this.Hide();
                             formularioDeUsuario.ShowDialog();
-                            /* Ejemplo de como abrir un formulario diferente dependiendo del perfil
-                             * formularioDeUsuario = new OtroFormulario();
-                             * this.Hide();
-                             * formularioDeUsuario.ShowDialog();
-                            */
                             break;
 
                         case idPerfilVeterinario:
-                            //Ejemplo de como abrir un formulario diferente dependiendo del perfil
                             formularioDeUsuario = new UI_Veterinario.MenuPrincipal();
                             this.Hide();
                             formularioDeUsuario.ShowDialog();
@@ -69,11 +61,9 @@ namespace PetShop_2025.UI_LogIn
                             break;
 
                         case idPerfilVendedor:
-                            /* Ejemplo de como abrir un formulario diferente dependiendo del perfil
-                             * formularioDeUsuario = new OtroFormulario();
-                             * this.Hide();
-                             * formularioDeUsuario.ShowDialog();
-                            */
+                            formularioDeUsuario = new UI_Vendedor.FormPanelVendedor();
+                            this.Hide();
+                            formularioDeUsuario.ShowDialog();
                             break;
 
                         default:
