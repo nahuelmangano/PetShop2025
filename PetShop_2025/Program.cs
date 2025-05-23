@@ -21,7 +21,7 @@ namespace PetShop_2025
             //Application.Run(new UI_LogIn.FormLogIn());
 
             // Abrir el formulario que se necesite
-            Application.Run(new UI_Veterinario.AgregarMedicamento());
+            Application.Run(new UI_Veterinario.MenuPrincipal());
         }
     }
 }
