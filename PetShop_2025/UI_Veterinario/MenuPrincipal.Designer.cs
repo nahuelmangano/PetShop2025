@@ -30,6 +30,7 @@
         {
             this.btnGestionarMedicamentos = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnAtenderMascota = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnGestionarMedicamentos
@@ -52,11 +53,22 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // btnAtenderMascota
+            // 
+            this.btnAtenderMascota.Location = new System.Drawing.Point(311, 83);
+            this.btnAtenderMascota.Name = "btnAtenderMascota";
+            this.btnAtenderMascota.Size = new System.Drawing.Size(139, 39);
+            this.btnAtenderMascota.TabIndex = 2;
+            this.btnAtenderMascota.Text = "Atender Mascota";
+            this.btnAtenderMascota.UseVisualStyleBackColor = true;
+            this.btnAtenderMascota.Click += new System.EventHandler(this.btnAtenderMascota_Click);
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAtenderMascota);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnGestionarMedicamentos);
             this.Name = "MenuPrincipal";
@@ -70,5 +82,6 @@
 
         private System.Windows.Forms.Button btnGestionarMedicamentos;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnAtenderMascota;
     }
 }
