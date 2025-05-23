@@ -16,5 +16,22 @@ namespace PetShop_2025.UI_Veterinario
         {
             InitializeComponent();
         }
+
+        private void MenuPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGestionarMedicamentos_Click(object sender, EventArgs e)
+        {
+            Form formGestionarMedicamentos = new UI_Veterinario.GestionarMedicamentos();
+            this.Hide();
+            formGestionarMedicamentos.ShowDialog();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

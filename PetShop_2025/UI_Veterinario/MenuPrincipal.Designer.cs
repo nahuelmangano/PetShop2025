@@ -28,12 +28,47 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.btnGestionarMedicamentos = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // btnGestionarMedicamentos
+            // 
+            this.btnGestionarMedicamentos.Location = new System.Drawing.Point(311, 154);
+            this.btnGestionarMedicamentos.Name = "btnGestionarMedicamentos";
+            this.btnGestionarMedicamentos.Size = new System.Drawing.Size(139, 39);
+            this.btnGestionarMedicamentos.TabIndex = 0;
+            this.btnGestionarMedicamentos.Text = "Gestionar Medicamentos";
+            this.btnGestionarMedicamentos.UseVisualStyleBackColor = true;
+            this.btnGestionarMedicamentos.Click += new System.EventHandler(this.btnGestionarMedicamentos_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(627, 396);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 1;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // MenuPrincipal
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "MenuPrincipal";
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnGestionarMedicamentos);
+            this.Name = "MenuPrincipal";
+            this.Text = "Menú Principal";
+            this.Load += new System.EventHandler(this.MenuPrincipal_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnGestionarMedicamentos;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

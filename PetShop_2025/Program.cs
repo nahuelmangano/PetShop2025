@@ -16,7 +16,12 @@ namespace PetShop_2025
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new UI_LogIn.FormLogIn());
+
+            // Inicializo el formulario de login
+            //Application.Run(new UI_LogIn.FormLogIn());
+
+            // Abrir el formulario que se necesite
+            Application.Run(new UI_Veterinario.AgregarMedicamento());
         }
     }
 }
