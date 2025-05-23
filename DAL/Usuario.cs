@@ -120,8 +120,8 @@ namespace DAL
             string nombreStoreProcedure = "sp_validar_usuario";
             SqlParameter[] parametros = new SqlParameter[2];
             Conexion objConexion = new Conexion();
-            parametros[0] = objConexion.crearParametro("@email", email);
-            parametros[1] = objConexion.crearParametro("@password", password);
+            parametros[0] = objConexion.crearParametro("@Email", email);
+            parametros[1] = objConexion.crearParametro("@Password", password);
 
             DataTable dt = objConexion.LeerPorStoreProcedure(nombreStoreProcedure, parametros);
 
@@ -130,15 +130,13 @@ namespace DAL
 
             BE.Usuario usuarioDeRetorno = new BE.Usuario();
             int primeraFila = 0;
-            usuarioDeRetorno.ID = int.Parse(dt.Rows[primeraFila][0].ToString());
-            usuarioDeRetorno.Email = dt.Rows[primeraFila]["mail_Usuario"].ToString();
+            usuarioDeRetorno.ID = int.Parse(dt.Rows[primeraFila]["ID"].ToString());
+            usuarioDeRetorno.Email = dt.Rows[primeraFila]["Email"].ToString();
             usuarioDeRetorno.Password = password;
 
             usuarioDeRetorno.Perfil = new BE.Perfil();
-            usuarioDeRetorno.Perfil.ID = int.Parse(dt.Rows[primeraFila]["perfil_Usuario"].ToString());
-            usuarioDeRetorno.Perfil.Descripcion = dt.Rows[primeraFila][2].ToString();
-
-
+            usuarioDeRetorno.Perfil.ID = int.Parse(dt.Rows[primeraFila]["IdPerfil"].ToString());
+            usuarioDeRetorno.Perfil.Descripcion = dt.Rows[primeraFila]["Descripcion"].ToString();
 
             return usuarioDeRetorno;
         }

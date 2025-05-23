@@ -25,41 +25,29 @@ namespace PetShop_2025.UI_LogIn
             try
             {
                 beUsuario = bllUsuario.ValidarUsuario(txtEmail.Text, txtPassword.Text);
-            }
-            catch (BE.ExcepcionDeNegocio excepcionPersonalizada)
-            {
-                beUsuario = null;
-                MessageBox.Show(excepcionPersonalizada.Mensaje);
-            }
-            catch (Exception ex)
-            {
-                beUsuario = null;
-                MessageBox.Show("Ocurrió una Exception: " + ex.Message);
-            }
-
-            if (beUsuario == null)
-            {
-                MessageBox.Show("Usuario o clave es invalido");
-            }
-            else
-            {
-                const int idPerfilGerente = 1;
-                const int idPerfilAdministrador = 2;
-                const int idPerfilVeterinario = 3;
-                const int idPerfilVendedor = 4;
-
-                Form formularioDeUsuario;
-
-
-                switch (beUsuario.Perfil.ID)
+                if (beUsuario == null)
                 {
-                    case idPerfilGerente:
-                        /* Ejemplo de como abrir un formulario diferente dependiendo del perfil
-                         * formularioDeUsuario = new OtroFormulario();
-                         * this.Hide();
-                         * formularioDeUsuario.ShowDialog();
-                        */
-                        break;
+                    MessageBox.Show("Usuario o clave es invalido");
+                }
+                else
+                {
+                    const int idPerfilGerente = 1;
+                    const int idPerfilAdministrador = 2;
+                    const int idPerfilVeterinario = 3;
+                    const int idPerfilVendedor = 4;
+
+                    Form formularioDeUsuario;
+
+
+                    switch (beUsuario.Perfil.ID)
+                    {
+                        case idPerfilGerente:
+                            /* Ejemplo de como abrir un formulario diferente dependiendo del perfil
+                             * formularioDeUsuario = new OtroFormulario();
+                             * this.Hide();
+                             * formularioDeUsuario.ShowDialog();
+                            */
+                            break;
 
                     case idPerfilAdministrador:
                         formularioDeUsuario = new UI_Administrador.FormPanelAdmin();
@@ -72,26 +60,37 @@ namespace PetShop_2025.UI_LogIn
                         */
                         break;
 
-                    case idPerfilVeterinario:
-                        //Ejemplo de como abrir un formulario diferente dependiendo del perfil
-                        formularioDeUsuario = new UI_Veterinario.MenuPrincipal();
-                        this.Hide();
-                        formularioDeUsuario.ShowDialog();
+                        case idPerfilVeterinario:
+                            //Ejemplo de como abrir un formulario diferente dependiendo del perfil
+                            formularioDeUsuario = new UI_Veterinario.MenuPrincipal();
+                            this.Hide();
+                            formularioDeUsuario.ShowDialog();
 
-                        break;
+                            break;
 
-                    case idPerfilVendedor:
-                        /* Ejemplo de como abrir un formulario diferente dependiendo del perfil
-                         * formularioDeUsuario = new OtroFormulario();
-                         * this.Hide();
-                         * formularioDeUsuario.ShowDialog();
-                        */
-                        break;
+                        case idPerfilVendedor:
+                            /* Ejemplo de como abrir un formulario diferente dependiendo del perfil
+                             * formularioDeUsuario = new OtroFormulario();
+                             * this.Hide();
+                             * formularioDeUsuario.ShowDialog();
+                            */
+                            break;
 
-                    default:
-                        
-                        break;
+                        default:
+
+                            break;
+                    }
                 }
+            }
+            catch (BE.ExcepcionDeNegocio excepcionPersonalizada)
+            {
+                beUsuario = null;
+                MessageBox.Show(excepcionPersonalizada.Mensaje);
+            }
+            catch (Exception ex)
+            {
+                beUsuario = null;
+                MessageBox.Show("Ocurrió una Exception: " + ex.Message);
             }
         }
 
