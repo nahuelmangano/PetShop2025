@@ -11,18 +11,10 @@ namespace DAL
 {
     public class Usuario
     {
-        public bool Alta(string nombre_usuario, string apellido_Usuario, string mail_Usuario, string password_Usuario, int perfil_Usuario)
-        {
+     
 
-            Conexion db = new Conexion();
-            string query = string.Format("INSERT INTO T_Usuario([nombre_Usuario],[apellido_Usuario], [mail_Usuario],[password_Usuario],[perfil_Usuario])" +
-                "VALUES('{0}', '{1}', '{2}', '{3}', {4})", nombre_usuario, apellido_Usuario, mail_Usuario, password_Usuario, perfil_Usuario
-
-                );
-            db.EscribirPorComando(query);
-            return true;
-        }
-
+        /*
+         * METODO VIEJO DE CREAR USUARIO
         public void crear(BE.Usuario usuario)
         {
             Conexion db = new Conexion();
@@ -32,6 +24,26 @@ namespace DAL
 
 
         }
+        */
+        public bool CrearUsuario(BE.Usuario usuario)
+        {
+            string nombreStoreProcedure = "sp_insertar_usuario";
+            SqlParameter[] parametros = new SqlParameter[5];
+            Conexion objConexion = new Conexion();
+
+            parametros[0] = objConexion.crearParametro("@nombre", usuario.Nombre);
+            parametros[1] = objConexion.crearParametro("@apellido", usuario.Apellido);
+            parametros[2] = objConexion.crearParametro("@email", usuario.Email);
+            parametros[3] = objConexion.crearParametro("@password", usuario.Password);
+            parametros[4] = objConexion.crearParametro("@perfil", usuario.Perfil.ID);
+
+            // Ejecutar el SP. Suponiendo que tenés un método que devuelve filas afectadas:
+           
+            int filasAfectadas = objConexion.EscribirPorStoreProcedure(nombreStoreProcedure, parametros);
+
+            return filasAfectadas > 0; // True si se insertó correctamente
+        }
+
 
         public void modificar(BE.Usuario usuario)
         {
@@ -47,8 +59,8 @@ namespace DAL
         {
 
             Conexion db = new Conexion();
-
             List<BE.Usuario> usuarios = new List<BE.Usuario>();
+            
 
 
             DataTable dt = db.LeerPorComando("Select mail_Usuario, password_Usuario From T_Usuario");
@@ -69,6 +81,8 @@ namespace DAL
             return usuarios;
         }
 
+        
+
         public List<BE.Usuario> Usuarios()
         {
 
@@ -85,12 +99,12 @@ namespace DAL
             {
                 usuarioAuxiliar = new BE.Usuario();
 
-                usuarioAuxiliar.ID = int.Parse(fila["id"].ToString());
-                usuarioAuxiliar.Nombre = fila["nombre"].ToString();
-                usuarioAuxiliar.Apellido= fila["apellido"].ToString();
+                usuarioAuxiliar.ID = int.Parse(fila["id_Usuario"].ToString());
+                usuarioAuxiliar.Nombre = fila["nombre_Usuario"].ToString();
+                usuarioAuxiliar.Apellido= fila["apellido_Usuario"].ToString();
                 usuarioAuxiliar.Perfil = new BE.Perfil();
-                usuarioAuxiliar.Perfil.ID = int.Parse(fila[2].ToString());
-                usuarioAuxiliar.Perfil.Descripcion = fila[3].ToString();
+                usuarioAuxiliar.Perfil.ID = int.Parse(fila[0].ToString());
+                usuarioAuxiliar.Perfil.Descripcion = fila[1].ToString();
 
                 listaDeRetorno.Add(usuarioAuxiliar);
             }

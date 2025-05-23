@@ -49,13 +49,16 @@ namespace PetShop_2025.UI_LogIn
                             */
                             break;
 
-                        case idPerfilAdministrador:
-                            /* Ejemplo de como abrir un formulario diferente dependiendo del perfil
-                             * formularioDeUsuario = new OtroFormulario();
-                             * this.Hide();
-                             * formularioDeUsuario.ShowDialog();
-                            */
-                            break;
+                    case idPerfilAdministrador:
+                        formularioDeUsuario = new UI_Administrador.FormPanelAdmin();
+                        this.Hide();
+                        formularioDeUsuario.ShowDialog();
+                        /* Ejemplo de como abrir un formulario diferente dependiendo del perfil
+                         * formularioDeUsuario = new OtroFormulario();
+                         * this.Hide();
+                         * formularioDeUsuario.ShowDialog();
+                        */
+                        break;
 
                         case idPerfilVeterinario:
                             //Ejemplo de como abrir un formulario diferente dependiendo del perfil
