@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class Usuario
+    public class Usuario : IEntidad
     {
         private int _id;
 
-        public int Id
+        public int ID
         {
             get { return _id; }
             set { _id = value; }
@@ -49,19 +49,9 @@ namespace BE
             set { _password = value; }
         }
 
-        public enum PerfilUsuario
-        {
-            Administrador = 1,
-            Gerente = 2,
-            Veterinario = 3,
-            Ventas = 4,
-            Compras = 5,
-            Cliente = 6
-        }
+        private Perfil _perfil;
 
-        private PerfilUsuario _perfil;
-
-        public PerfilUsuario Perfil
+        public Perfil Perfil
         {
             get { return _perfil; }
             set { _perfil = value; }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -66,6 +67,64 @@ namespace DAL
 
             }
             return usuarios;
+        }
+
+        public List<BE.Usuario> Usuarios()
+        {
+
+
+            List<BE.Usuario> listaDeRetorno = new List<BE.Usuario>();
+            string nombreStoreProcedure = "sp_listar_usuarios";
+            Conexion objConexion = new Conexion();
+
+            DataTable dt = objConexion.LeerPorStoreProcedure(nombreStoreProcedure);
+
+
+            BE.Usuario usuarioAuxiliar;
+            foreach (DataRow fila in dt.Rows)
+            {
+                usuarioAuxiliar = new BE.Usuario();
+
+                usuarioAuxiliar.ID = int.Parse(fila["id"].ToString());
+                usuarioAuxiliar.Nombre = fila["nombre"].ToString();
+                usuarioAuxiliar.Apellido= fila["apellido"].ToString();
+                usuarioAuxiliar.Perfil = new BE.Perfil();
+                usuarioAuxiliar.Perfil.ID = int.Parse(fila[2].ToString());
+                usuarioAuxiliar.Perfil.Descripcion = fila[3].ToString();
+
+                listaDeRetorno.Add(usuarioAuxiliar);
+            }
+
+
+            return listaDeRetorno;
+
+
+        }
+
+        public BE.Usuario ValidarUsuario(string email, string password)
+        {
+            string nombreStoreProcedure = "sp_validar_usuario";
+            SqlParameter[] parametros = new SqlParameter[2];
+            Conexion objConexion = new Conexion();
+            parametros[0] = objConexion.crearParametro("@Email", email);
+            parametros[1] = objConexion.crearParametro("@Password", password);
+
+            DataTable dt = objConexion.LeerPorStoreProcedure(nombreStoreProcedure, parametros);
+
+            if (dt == null || dt.Rows.Count == 0)
+                return null;
+
+            BE.Usuario usuarioDeRetorno = new BE.Usuario();
+            int primeraFila = 0;
+            usuarioDeRetorno.ID = int.Parse(dt.Rows[primeraFila]["ID"].ToString());
+            usuarioDeRetorno.Email = dt.Rows[primeraFila]["Email"].ToString();
+            usuarioDeRetorno.Password = password;
+
+            usuarioDeRetorno.Perfil = new BE.Perfil();
+            usuarioDeRetorno.Perfil.ID = int.Parse(dt.Rows[primeraFila]["IdPerfil"].ToString());
+            usuarioDeRetorno.Perfil.Descripcion = dt.Rows[primeraFila]["Descripcion"].ToString();
+
+            return usuarioDeRetorno;
         }
 
 
