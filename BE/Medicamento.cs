@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class Medicamento
+    public class Medicamento : IEntidad
     {
 		private int _id;
 
-		public int Id
+		public int ID
 		{
 			get { return _id; }
 			set { _id = value; }
@@ -47,13 +47,6 @@ namespace BE
 			get { return _stockMinimo; }
 			set { _stockMinimo = value; }
 		}
-
-		public enum EstadoStock
-		{
-			Agotado = 0,
-			Bajo = 1,
-			Normal = 2,
-        }
 
 		private EstadoStock _estado;
 

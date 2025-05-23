@@ -14,7 +14,25 @@ namespace BLL
         {
             // Validaciones de negocio
             if (string.IsNullOrWhiteSpace(unMedicamento.Nombre))
-                throw new Exception("El nombre es obligatorio");
+            {
+                throw new BE.ExcepcionDeNegocio("Advertencia: El campo 'nombre' es obligatorio");
+            }
+
+            if (unMedicamento.StockActual <= 0) 
+            {
+                throw new BE.ExcepcionDeNegocio("Advertencia: El campo 'stock actual' es obligatorio");
+            }
+
+            if (unMedicamento.StockMinimo <= 0)
+            {
+                throw new BE.ExcepcionDeNegocio("Advertencia: El campo 'stock mínimo' es obligatorio");
+            }
+
+            // Asignar estado según stock
+            if (unMedicamento.StockActual < unMedicamento.StockMinimo)
+                unMedicamento.Estado = new BE.EstadoStock { ID = 2, Descripcion = "Bajo" };
+            else
+                unMedicamento.Estado = new BE.EstadoStock { ID = 1, Descripcion = "Normal" };
 
             dalMedicamento.Insertar(unMedicamento);
 

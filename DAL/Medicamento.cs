@@ -23,11 +23,11 @@ namespace DAL
                 {
                     BE.Medicamento unMedicamento = new BE.Medicamento
                     {
-                        Id = Convert.ToInt32(fila["Id"]),
+                        ID = Convert.ToInt32(fila["Id"]),
                         Nombre = fila["Nombre"].ToString(),
                         StockActual = Convert.ToInt32(fila["StockActual"]),
                         StockMinimo = Convert.ToInt32(fila["StockMinimo"]),
-                        Estado = (BE.Medicamento.EstadoStock)Convert.ToInt32(fila["Estado"])
+                        //Estado = (BE.Medicamento.EstadoStock)Convert.ToInt32(fila["Estado"])
                     };
                     listaMedicamentos.Add(unMedicamento);
                 }
@@ -42,15 +42,17 @@ namespace DAL
         public bool Insertar(BE.Medicamento unMedicamento) {
             try
             {
+                string nombreStoreProcedure = "SP_Medicamento_Insertar";
+
                 SqlParameter[] parametros = new SqlParameter[]
                 {
-                    conexion.crearParametro("@Nombre",unMedicamento.Nombre),
+                    conexion.crearParametro("@Nombre",unMedicamento.Nombre.Trim()),
                     conexion.crearParametro("@StockActual",unMedicamento.StockActual),
                     conexion.crearParametro("@StockMinimo", unMedicamento.StockMinimo),
-                    conexion.crearParametro("@Estado",unMedicamento.Estado.ToString())
+                    conexion.crearParametro("@Estado",unMedicamento.Estado.Descripcion)
                 };
-
-                int filasAfectadas = conexion.EscribirPorStoreProcedure("SP_Medicamento_Insertar", parametros);
+                //REFACTURE: Validar antes de escribir que el ingreso no se encuentre en la DB.
+                int filasAfectadas = conexion.EscribirPorStoreProcedure(nombreStoreProcedure, parametros);
                 return filasAfectadas > 0;
             }
             catch (Exception ex)

@@ -29,119 +29,116 @@
         private void InitializeComponent()
         {
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.tboxNombre = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.numStockActual = new System.Windows.Forms.NumericUpDown();
-            this.numStockMinimo = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.numStockActual)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numStockMinimo)).BeginInit();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblStockActual = new System.Windows.Forms.Label();
+            this.lblStockMinimo = new System.Windows.Forms.Label();
+            this.nudStockActual = new System.Windows.Forms.NumericUpDown();
+            this.nudStockMinimo = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.nudStockActual)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudStockMinimo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgregar
             // 
-            this.btnAgregar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnAgregar.Location = new System.Drawing.Point(182, 385);
+            this.btnAgregar.Location = new System.Drawing.Point(15, 179);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(84, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 0;
-            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Text = "➕ Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // btnSalir
+            // btnCancelar
             // 
-            this.btnSalir.Location = new System.Drawing.Point(341, 385);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(84, 23);
-            this.btnSalir.TabIndex = 1;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.button1_Click);
+            this.btnCancelar.Location = new System.Drawing.Point(278, 179);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(82, 23);
+            this.btnCancelar.TabIndex = 1;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // tboxNombre
+            // txtNombre
             // 
-            this.tboxNombre.Location = new System.Drawing.Point(305, 116);
-            this.tboxNombre.Name = "tboxNombre";
-            this.tboxNombre.Size = new System.Drawing.Size(120, 20);
-            this.tboxNombre.TabIndex = 2;
-            this.tboxNombre.TextChanged += new System.EventHandler(this.txtBoxNombreMedicamento_TextChanged);
+            this.txtNombre.Location = new System.Drawing.Point(97, 26);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(263, 20);
+            this.txtNombre.TabIndex = 2;
             // 
-            // label1
+            // lblNombre
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(179, 119);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Nombre";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(12, 29);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.TabIndex = 3;
+            this.lblNombre.Text = "Nombre";
             // 
-            // label2
+            // lblStockActual
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(179, 158);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Stock Actual";
+            this.lblStockActual.AutoSize = true;
+            this.lblStockActual.Location = new System.Drawing.Point(12, 71);
+            this.lblStockActual.Name = "lblStockActual";
+            this.lblStockActual.Size = new System.Drawing.Size(68, 13);
+            this.lblStockActual.TabIndex = 4;
+            this.lblStockActual.Text = "Stock Actual";
             // 
-            // label3
+            // lblStockMinimo
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(179, 199);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Stock Mínimo";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.lblStockMinimo.AutoSize = true;
+            this.lblStockMinimo.Location = new System.Drawing.Point(12, 113);
+            this.lblStockMinimo.Name = "lblStockMinimo";
+            this.lblStockMinimo.Size = new System.Drawing.Size(73, 13);
+            this.lblStockMinimo.TabIndex = 5;
+            this.lblStockMinimo.Text = "Stock Mínimo";
             // 
-            // label4
+            // nudStockActual
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(223, 252);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 13);
-            this.label4.TabIndex = 9;
+            this.nudStockActual.Location = new System.Drawing.Point(97, 64);
+            this.nudStockActual.Name = "nudStockActual";
+            this.nudStockActual.Size = new System.Drawing.Size(70, 20);
+            this.nudStockActual.TabIndex = 6;
             // 
-            // numStockActual
+            // nudStockMinimo
             // 
-            this.numStockActual.Location = new System.Drawing.Point(305, 156);
-            this.numStockActual.Name = "numStockActual";
-            this.numStockActual.Size = new System.Drawing.Size(120, 20);
-            this.numStockActual.TabIndex = 10;
+            this.nudStockMinimo.Location = new System.Drawing.Point(97, 106);
+            this.nudStockMinimo.Name = "nudStockMinimo";
+            this.nudStockMinimo.Size = new System.Drawing.Size(70, 20);
+            this.nudStockMinimo.TabIndex = 7;
             // 
-            // numStockMinimo
-            // 
-            this.numStockMinimo.Location = new System.Drawing.Point(305, 197);
-            this.numStockMinimo.Name = "numStockMinimo";
-            this.numStockMinimo.Size = new System.Drawing.Size(120, 20);
-            this.numStockMinimo.TabIndex = 11;
-            // 
-
-            this.SuspendLayout();
-            // 
-
             // AgregarMedicamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(381, 217);
+            this.Controls.Add(this.nudStockMinimo);
+            this.Controls.Add(this.nudStockActual);
+            this.Controls.Add(this.lblStockMinimo);
+            this.Controls.Add(this.lblStockActual);
+            this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnAgregar);
+            this.Name = "AgregarMedicamento";
+            this.Text = "Agregar Medicamento";
+            ((System.ComponentModel.ISupportInitialize)(this.nudStockActual)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudStockMinimo)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
 
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.TextBox tboxNombre;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown numStockActual;
-        private System.Windows.Forms.NumericUpDown numStockMinimo;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblStockActual;
+        private System.Windows.Forms.Label lblStockMinimo;
+        private System.Windows.Forms.NumericUpDown nudStockActual;
+        private System.Windows.Forms.NumericUpDown nudStockMinimo;
     }
 }
