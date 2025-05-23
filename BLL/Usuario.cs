@@ -32,7 +32,7 @@ namespace BLL
         {
 
             DAL.Usuario dalUsuario = new DAL.Usuario();
-            dalUsuario.crear(usuario);
+            dalUsuario.CrearUsuario(usuario);
 
             return true;
 
@@ -67,6 +67,20 @@ namespace BLL
 
             }
             return false;
+        }
+
+        public List<BE.Usuario> ListarUsuarios() 
+        { 
+            DAL.Usuario dalUsuario= new DAL.Usuario();
+
+            List<BE.Usuario> usuarios = dalUsuario.Usuarios();
+
+
+            return usuarios;
+
+
+
+
         }
 
 

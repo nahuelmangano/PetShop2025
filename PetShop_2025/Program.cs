@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PetShop_2025.UI_LogIn;
 
 namespace PetShop_2025
 {
@@ -16,7 +17,7 @@ namespace PetShop_2025
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new f_LogIn());
+            Application.Run(new FormLogIn());
         }
     }
 }

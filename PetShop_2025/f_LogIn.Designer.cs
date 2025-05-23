@@ -34,6 +34,7 @@
             this.lbl_Contraseña = new System.Windows.Forms.Label();
             this.tb_Usuario = new System.Windows.Forms.TextBox();
             this.tb_Contraseña = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btn_LogIn
@@ -88,11 +89,22 @@
             this.tb_Contraseña.Size = new System.Drawing.Size(100, 20);
             this.tb_Contraseña.TabIndex = 5;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(396, 36);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(80, 17);
+            this.checkBox1.TabIndex = 6;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // f_LogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.tb_Contraseña);
             this.Controls.Add(this.tb_Usuario);
             this.Controls.Add(this.lbl_Contraseña);
@@ -114,6 +126,7 @@
         private System.Windows.Forms.Label lbl_Contraseña;
         private System.Windows.Forms.TextBox tb_Usuario;
         private System.Windows.Forms.TextBox tb_Contraseña;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 

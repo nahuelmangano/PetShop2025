@@ -52,10 +52,34 @@
     <Compile Include="f_LogIn.Designer.cs">
       <DependentUpon>f_LogIn.cs</DependentUpon>
     </Compile>
-    <Compile Include="f_PanelAdmin.cs">
+    <Compile Include="UI_Administrador\FormCrearUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="f_PanelAdmin.Designer.cs">
+    <Compile Include="UI_Administrador\FormCrearUsuario.Designer.cs">
+      <DependentUpon>FormCrearUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Administrador\FormEditarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Administrador\FormEditarUsuario.Designer.cs">
+      <DependentUpon>FormEditarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Administrador\FormListarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Administrador\FormListarUsuario.Designer.cs">
+      <DependentUpon>FormListarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Administrador\FormPanelAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Administrador\FormPanelAdmin.Designer.cs">
+      <DependentUpon>FormPanelAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Administrador\f_PanelAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Administrador\f_PanelAdmin.Designer.cs">
       <DependentUpon>f_PanelAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -81,7 +105,16 @@
     <EmbeddedResource Include="f_LogIn.resx">
       <DependentUpon>f_LogIn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="f_PanelAdmin.resx">
+    <EmbeddedResource Include="UI_Administrador\FormCrearUsuario.resx">
+      <DependentUpon>FormCrearUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Administrador\FormListarUsuario.resx">
+      <DependentUpon>FormListarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Administrador\FormPanelAdmin.resx">
+      <DependentUpon>FormPanelAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Administrador\f_PanelAdmin.resx">
       <DependentUpon>f_PanelAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
