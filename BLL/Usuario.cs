@@ -37,7 +37,7 @@ namespace BLL
 
             foreach (BE.Usuario unUsuario in usuarios)
             {
-                if (unUsuario.PasswordUsuario == password.Trim() && unUsuario.EmailUsuario == usuarioMail.Trim())
+                if (unUsuario.Password == password.Trim() && unUsuario.Email == usuarioMail.Trim())
                 {
                     return true;
                 }

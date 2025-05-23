@@ -8,54 +8,63 @@ namespace BE
 {
     public class Usuario
     {
-        private string _nombreUsuario;
-        public string NombreUsuario
+        private int _id;
+
+        public int Id
         {
-            get { return _nombreUsuario; }
-            set { _nombreUsuario = value; }
+            get { return _id; }
+            set { _id = value; }
         }
 
-        private string _apellidoUsuario;
-
-
-        public string ApellidoUsuario
+        private string _nombre;
+        public string Nombre
         {
-            get { return _apellidoUsuario; }
-            set { _apellidoUsuario = value; }
+            get { return _nombre; }
+            set { _nombre = value; }
+        }
+
+        private string _apellido;
+
+
+        public string Apellido
+        {
+            get { return _apellido; }
+            set { _apellido = value; }
         }
 
 
-        private string _emailUsuario;
+        private string _email;
 
-        public string EmailUsuario
+        public string Email
         {
-            get { return _emailUsuario; }
-            set { _emailUsuario = value; }
+            get { return _email; }
+            set { _email = value; }
         }
 
-        private string _passwordUsuario;
+        private string _password;
 
-        public string PasswordUsuario
+        public string Password
         {
-            get { return _passwordUsuario; }
-            set { _passwordUsuario = value; }
+            get { return _password; }
+            set { _password = value; }
         }
 
         public enum PerfilUsuario
         {
             Administrador = 1,
             Gerente = 2,
-            Ventas = 3,
-            Compras = 4,
-            Cliente = 5
+            Veterinario = 3,
+            Ventas = 4,
+            Compras = 5,
+            Cliente = 6
         }
 
-        private PerfilUsuario _perfilUsuario;
+        private PerfilUsuario _perfil;
 
         public PerfilUsuario Perfil
         {
-            get { return _perfilUsuario; }
-            set { _perfilUsuario = value; }
+            get { return _perfil; }
+            set { _perfil = value; }
         }
 
     }
