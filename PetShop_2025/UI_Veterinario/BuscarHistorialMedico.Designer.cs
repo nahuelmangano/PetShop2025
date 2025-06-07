@@ -194,6 +194,7 @@
             this.Controls.Add(this.lblNombreMascota);
             this.Controls.Add(this.lblDNIPropietario);
             this.Name = "BuscarHistorialMedico";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar Historial Médico";
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorialesEncontrados)).EndInit();
             this.ResumeLayout(false);

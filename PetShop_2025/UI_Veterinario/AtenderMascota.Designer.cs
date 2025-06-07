@@ -72,6 +72,7 @@
             this.Controls.Add(this.btnBuscarHistorial);
             this.Controls.Add(this.btnNuevaConsulta);
             this.Name = "AtenderMascota";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Atender Mascota";
             this.ResumeLayout(false);
 

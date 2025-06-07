@@ -306,6 +306,7 @@
             this.Controls.Add(this.lblPropietario);
             this.Controls.Add(this.lblMascota);
             this.Name = "NuevaConsulta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nueva Consulta";
             this.ResumeLayout(false);
             this.PerformLayout();

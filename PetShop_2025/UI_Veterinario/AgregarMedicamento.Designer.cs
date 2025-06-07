@@ -122,6 +122,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
             this.Name = "AgregarMedicamento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Medicamento";
             ((System.ComponentModel.ISupportInitialize)(this.nudStockActual)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStockMinimo)).EndInit();

@@ -72,6 +72,7 @@
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnGestionarMedicamentos);
             this.Name = "MenuPrincipal";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menú Principal";
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.ResumeLayout(false);
