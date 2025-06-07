@@ -23,5 +23,10 @@ namespace PetShop_2025.UI_Veterinario
             this.Hide();
             formAgregarMedicamento.ShowDialog();
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

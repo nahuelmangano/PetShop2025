@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.btnAgregarMedicamento = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAgregarMedicamento
@@ -41,11 +42,22 @@
             this.btnAgregarMedicamento.UseVisualStyleBackColor = true;
             this.btnAgregarMedicamento.Click += new System.EventHandler(this.btnAgregarMedicamento_Click);
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(549, 349);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(117, 33);
+            this.btnVolver.TabIndex = 3;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // GestionarMedicamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAgregarMedicamento);
             this.Name = "GestionarMedicamentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -57,5 +69,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnAgregarMedicamento;
+        private System.Windows.Forms.Button btnVolver;
     }
 }
