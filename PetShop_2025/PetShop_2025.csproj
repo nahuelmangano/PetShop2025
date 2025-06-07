@@ -109,6 +109,18 @@
     <Compile Include="UI_Veterinario\AgregarMedicamento.Designer.cs">
       <DependentUpon>AgregarMedicamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI_Veterinario\AtenderMascota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Veterinario\AtenderMascota.Designer.cs">
+      <DependentUpon>AtenderMascota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Veterinario\BuscarHistorialMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Veterinario\BuscarHistorialMedico.Designer.cs">
+      <DependentUpon>BuscarHistorialMedico.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI_Veterinario\GestionarMedicamentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +138,12 @@
     </Compile>
     <Compile Include="UI_Vendedor\FormPanelVendedor.Designer.cs">
       <DependentUpon>FormPanelVendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Veterinario\NuevaConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Veterinario\NuevaConsulta.Designer.cs">
+      <DependentUpon>NuevaConsulta.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="UI_Administrador\FormCrearUsuario.resx">
       <DependentUpon>FormCrearUsuario.cs</DependentUpon>
@@ -158,11 +176,20 @@
     <EmbeddedResource Include="UI_Veterinario\AgregarMedicamento.resx">
       <DependentUpon>AgregarMedicamento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI_Veterinario\AtenderMascota.resx">
+      <DependentUpon>AtenderMascota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Veterinario\BuscarHistorialMedico.resx">
+      <DependentUpon>BuscarHistorialMedico.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI_Veterinario\GestionarMedicamentos.resx">
       <DependentUpon>GestionarMedicamentos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI_Veterinario\MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Veterinario\NuevaConsulta.resx">
+      <DependentUpon>NuevaConsulta.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
