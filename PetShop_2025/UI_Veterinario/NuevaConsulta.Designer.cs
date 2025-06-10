@@ -52,31 +52,38 @@
             this.lblNombrePropietario = new System.Windows.Forms.Label();
             this.lblDNI = new System.Windows.Forms.Label();
             this.gBoxMascota = new System.Windows.Forms.GroupBox();
-            this.lblSexo = new System.Windows.Forms.Label();
-            this.lblEdad = new System.Windows.Forms.Label();
-            this.lblEsterilizada = new System.Windows.Forms.Label();
-            this.lblPeso = new System.Windows.Forms.Label();
-            this.cmbSexo = new System.Windows.Forms.ComboBox();
-            this.cmbEsterilizado = new System.Windows.Forms.ComboBox();
-            this.nudPeso = new System.Windows.Forms.NumericUpDown();
-            this.lblEdadAños = new System.Windows.Forms.Label();
-            this.lblEdadMeses = new System.Windows.Forms.Label();
-            this.gBoxPropietario = new System.Windows.Forms.GroupBox();
-            this.nudDNI = new System.Windows.Forms.NumericUpDown();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.gBoxConsulta = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dtpFechaDeNacimiento = new System.Windows.Forms.DateTimePicker();
-            this.txtEdad = new System.Windows.Forms.TextBox();
             this.txtEdadMeses = new System.Windows.Forms.TextBox();
-            this.lblApellido = new System.Windows.Forms.Label();
+            this.txtEdad = new System.Windows.Forms.TextBox();
+            this.dtpFechaDeNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblEdadMeses = new System.Windows.Forms.Label();
+            this.lblEdadAños = new System.Windows.Forms.Label();
+            this.nudPeso = new System.Windows.Forms.NumericUpDown();
+            this.cmbEsterilizado = new System.Windows.Forms.ComboBox();
+            this.cmbSexo = new System.Windows.Forms.ComboBox();
+            this.lblPeso = new System.Windows.Forms.Label();
+            this.lblEsterilizada = new System.Windows.Forms.Label();
+            this.lblEdad = new System.Windows.Forms.Label();
+            this.lblSexo = new System.Windows.Forms.Label();
+            this.gBoxPropietario = new System.Windows.Forms.GroupBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
+            this.lblApellido = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.nudDNI = new System.Windows.Forms.NumericUpDown();
+            this.gBoxConsulta = new System.Windows.Forms.GroupBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblVacunas = new System.Windows.Forms.Label();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dosis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAgregarVacuna = new System.Windows.Forms.Button();
             this.gBoxMascota.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPeso)).BeginInit();
             this.gBoxPropietario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDNI)).BeginInit();
             this.gBoxConsulta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFecha
@@ -126,7 +133,7 @@
             // 
             // btnGuardarAtencion
             // 
-            this.btnGuardarAtencion.Location = new System.Drawing.Point(376, 683);
+            this.btnGuardarAtencion.Location = new System.Drawing.Point(376, 779);
             this.btnGuardarAtencion.Name = "btnGuardarAtencion";
             this.btnGuardarAtencion.Size = new System.Drawing.Size(106, 31);
             this.btnGuardarAtencion.TabIndex = 7;
@@ -136,7 +143,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(488, 683);
+            this.btnCancelar.Location = new System.Drawing.Point(488, 779);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(106, 31);
             this.btnCancelar.TabIndex = 8;
@@ -304,64 +311,47 @@
             this.gBoxMascota.TabStop = false;
             this.gBoxMascota.Text = "Datos de la Mascota";
             // 
-            // lblSexo
+            // txtEdadMeses
             // 
-            this.lblSexo.AutoSize = true;
-            this.lblSexo.Location = new System.Drawing.Point(7, 56);
-            this.lblSexo.Name = "lblSexo";
-            this.lblSexo.Size = new System.Drawing.Size(34, 13);
-            this.lblSexo.TabIndex = 24;
-            this.lblSexo.Text = "Sexo:";
+            this.txtEdadMeses.Location = new System.Drawing.Point(143, 116);
+            this.txtEdadMeses.Name = "txtEdadMeses";
+            this.txtEdadMeses.ReadOnly = true;
+            this.txtEdadMeses.Size = new System.Drawing.Size(58, 20);
+            this.txtEdadMeses.TabIndex = 38;
             // 
-            // lblEdad
+            // txtEdad
             // 
-            this.lblEdad.AutoSize = true;
-            this.lblEdad.Location = new System.Drawing.Point(7, 120);
-            this.lblEdad.Name = "lblEdad";
-            this.lblEdad.Size = new System.Drawing.Size(35, 13);
-            this.lblEdad.TabIndex = 25;
-            this.lblEdad.Text = "Edad:";
+            this.txtEdad.Location = new System.Drawing.Point(45, 116);
+            this.txtEdad.Name = "txtEdad";
+            this.txtEdad.ReadOnly = true;
+            this.txtEdad.Size = new System.Drawing.Size(58, 20);
+            this.txtEdad.TabIndex = 37;
             // 
-            // lblEsterilizada
+            // dtpFechaDeNacimiento
             // 
-            this.lblEsterilizada.AutoSize = true;
-            this.lblEsterilizada.Location = new System.Drawing.Point(284, 120);
-            this.lblEsterilizada.Name = "lblEsterilizada";
-            this.lblEsterilizada.Size = new System.Drawing.Size(63, 13);
-            this.lblEsterilizada.TabIndex = 26;
-            this.lblEsterilizada.Text = "Esterilizada:";
+            this.dtpFechaDeNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaDeNacimiento.Location = new System.Drawing.Point(122, 86);
+            this.dtpFechaDeNacimiento.Name = "dtpFechaDeNacimiento";
+            this.dtpFechaDeNacimiento.Size = new System.Drawing.Size(137, 20);
+            this.dtpFechaDeNacimiento.TabIndex = 17;
             // 
-            // lblPeso
+            // label1
             // 
-            this.lblPeso.AutoSize = true;
-            this.lblPeso.Location = new System.Drawing.Point(140, 56);
-            this.lblPeso.Name = "lblPeso";
-            this.lblPeso.Size = new System.Drawing.Size(52, 13);
-            this.lblPeso.TabIndex = 27;
-            this.lblPeso.Text = "Peso (gr):";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(7, 89);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(109, 13);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Fecha de nacimiento:";
             // 
-            // cmbSexo
+            // lblEdadMeses
             // 
-            this.cmbSexo.FormattingEnabled = true;
-            this.cmbSexo.Location = new System.Drawing.Point(59, 53);
-            this.cmbSexo.Name = "cmbSexo";
-            this.cmbSexo.Size = new System.Drawing.Size(73, 21);
-            this.cmbSexo.TabIndex = 28;
-            // 
-            // cmbEsterilizado
-            // 
-            this.cmbEsterilizado.FormattingEnabled = true;
-            this.cmbEsterilizado.Location = new System.Drawing.Point(351, 117);
-            this.cmbEsterilizado.Name = "cmbEsterilizado";
-            this.cmbEsterilizado.Size = new System.Drawing.Size(121, 21);
-            this.cmbEsterilizado.TabIndex = 29;
-            // 
-            // nudPeso
-            // 
-            this.nudPeso.Location = new System.Drawing.Point(194, 53);
-            this.nudPeso.Name = "nudPeso";
-            this.nudPeso.Size = new System.Drawing.Size(65, 20);
-            this.nudPeso.TabIndex = 31;
+            this.lblEdadMeses.AutoSize = true;
+            this.lblEdadMeses.Location = new System.Drawing.Point(207, 120);
+            this.lblEdadMeses.Name = "lblEdadMeses";
+            this.lblEdadMeses.Size = new System.Drawing.Size(37, 13);
+            this.lblEdadMeses.TabIndex = 34;
+            this.lblEdadMeses.Text = "meses";
             // 
             // lblEdadAños
             // 
@@ -372,14 +362,64 @@
             this.lblEdadAños.TabIndex = 32;
             this.lblEdadAños.Text = "años";
             // 
-            // lblEdadMeses
+            // nudPeso
             // 
-            this.lblEdadMeses.AutoSize = true;
-            this.lblEdadMeses.Location = new System.Drawing.Point(207, 120);
-            this.lblEdadMeses.Name = "lblEdadMeses";
-            this.lblEdadMeses.Size = new System.Drawing.Size(37, 13);
-            this.lblEdadMeses.TabIndex = 34;
-            this.lblEdadMeses.Text = "meses";
+            this.nudPeso.Location = new System.Drawing.Point(194, 53);
+            this.nudPeso.Name = "nudPeso";
+            this.nudPeso.Size = new System.Drawing.Size(65, 20);
+            this.nudPeso.TabIndex = 31;
+            // 
+            // cmbEsterilizado
+            // 
+            this.cmbEsterilizado.FormattingEnabled = true;
+            this.cmbEsterilizado.Location = new System.Drawing.Point(351, 117);
+            this.cmbEsterilizado.Name = "cmbEsterilizado";
+            this.cmbEsterilizado.Size = new System.Drawing.Size(121, 21);
+            this.cmbEsterilizado.TabIndex = 29;
+            // 
+            // cmbSexo
+            // 
+            this.cmbSexo.FormattingEnabled = true;
+            this.cmbSexo.Location = new System.Drawing.Point(59, 53);
+            this.cmbSexo.Name = "cmbSexo";
+            this.cmbSexo.Size = new System.Drawing.Size(73, 21);
+            this.cmbSexo.TabIndex = 28;
+            // 
+            // lblPeso
+            // 
+            this.lblPeso.AutoSize = true;
+            this.lblPeso.Location = new System.Drawing.Point(140, 56);
+            this.lblPeso.Name = "lblPeso";
+            this.lblPeso.Size = new System.Drawing.Size(52, 13);
+            this.lblPeso.TabIndex = 27;
+            this.lblPeso.Text = "Peso (gr):";
+            // 
+            // lblEsterilizada
+            // 
+            this.lblEsterilizada.AutoSize = true;
+            this.lblEsterilizada.Location = new System.Drawing.Point(284, 120);
+            this.lblEsterilizada.Name = "lblEsterilizada";
+            this.lblEsterilizada.Size = new System.Drawing.Size(63, 13);
+            this.lblEsterilizada.TabIndex = 26;
+            this.lblEsterilizada.Text = "Esterilizada:";
+            // 
+            // lblEdad
+            // 
+            this.lblEdad.AutoSize = true;
+            this.lblEdad.Location = new System.Drawing.Point(7, 120);
+            this.lblEdad.Name = "lblEdad";
+            this.lblEdad.Size = new System.Drawing.Size(35, 13);
+            this.lblEdad.TabIndex = 25;
+            this.lblEdad.Text = "Edad:";
+            // 
+            // lblSexo
+            // 
+            this.lblSexo.AutoSize = true;
+            this.lblSexo.Location = new System.Drawing.Point(7, 56);
+            this.lblSexo.Name = "lblSexo";
+            this.lblSexo.Size = new System.Drawing.Size(34, 13);
+            this.lblSexo.TabIndex = 24;
+            this.lblSexo.Text = "Sexo:";
             // 
             // gBoxPropietario
             // 
@@ -398,12 +438,28 @@
             this.gBoxPropietario.TabStop = false;
             this.gBoxPropietario.Text = "Datos del Propietario";
             // 
-            // nudDNI
+            // txtApellido
             // 
-            this.nudDNI.Location = new System.Drawing.Point(351, 23);
-            this.nudDNI.Name = "nudDNI";
-            this.nudDNI.Size = new System.Drawing.Size(200, 20);
-            this.nudDNI.TabIndex = 36;
+            this.txtApellido.Location = new System.Drawing.Point(59, 52);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(200, 20);
+            this.txtApellido.TabIndex = 40;
+            // 
+            // lblApellido
+            // 
+            this.lblApellido.AutoSize = true;
+            this.lblApellido.Location = new System.Drawing.Point(7, 55);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(47, 13);
+            this.lblApellido.TabIndex = 39;
+            this.lblApellido.Text = "Apellido:";
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(351, 52);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(200, 20);
+            this.txtEmail.TabIndex = 38;
             // 
             // lblEmail
             // 
@@ -414,15 +470,18 @@
             this.lblEmail.TabIndex = 37;
             this.lblEmail.Text = "Email:";
             // 
-            // txtEmail
+            // nudDNI
             // 
-            this.txtEmail.Location = new System.Drawing.Point(351, 52);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(200, 20);
-            this.txtEmail.TabIndex = 38;
+            this.nudDNI.Location = new System.Drawing.Point(351, 23);
+            this.nudDNI.Name = "nudDNI";
+            this.nudDNI.Size = new System.Drawing.Size(200, 20);
+            this.nudDNI.TabIndex = 36;
             // 
             // gBoxConsulta
             // 
+            this.gBoxConsulta.Controls.Add(this.btnAgregarVacuna);
+            this.gBoxConsulta.Controls.Add(this.dataGridView1);
+            this.gBoxConsulta.Controls.Add(this.lblVacunas);
             this.gBoxConsulta.Controls.Add(this.lblFecha);
             this.gBoxConsulta.Controls.Add(this.dtpFecha);
             this.gBoxConsulta.Controls.Add(this.lblMotivo);
@@ -435,65 +494,62 @@
             this.gBoxConsulta.Controls.Add(this.lblTratamiento);
             this.gBoxConsulta.Location = new System.Drawing.Point(12, 279);
             this.gBoxConsulta.Name = "gBoxConsulta";
-            this.gBoxConsulta.Size = new System.Drawing.Size(582, 382);
+            this.gBoxConsulta.Size = new System.Drawing.Size(582, 494);
             this.gBoxConsulta.TabIndex = 29;
             this.gBoxConsulta.TabStop = false;
             this.gBoxConsulta.Text = "Datos de la Consulta";
             // 
-            // label1
+            // dataGridView1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 89);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 13);
-            this.label1.TabIndex = 36;
-            this.label1.Text = "Fecha de nacimiento:";
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nombre,
+            this.Dosis,
+            this.Fecha});
+            this.dataGridView1.Location = new System.Drawing.Point(13, 404);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(394, 77);
+            this.dataGridView1.TabIndex = 18;
             // 
-            // dtpFechaDeNacimiento
+            // lblVacunas
             // 
-            this.dtpFechaDeNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaDeNacimiento.Location = new System.Drawing.Point(122, 86);
-            this.dtpFechaDeNacimiento.Name = "dtpFechaDeNacimiento";
-            this.dtpFechaDeNacimiento.Size = new System.Drawing.Size(137, 20);
-            this.dtpFechaDeNacimiento.TabIndex = 17;
+            this.lblVacunas.AutoSize = true;
+            this.lblVacunas.Location = new System.Drawing.Point(7, 377);
+            this.lblVacunas.Name = "lblVacunas";
+            this.lblVacunas.Size = new System.Drawing.Size(98, 13);
+            this.lblVacunas.TabIndex = 17;
+            this.lblVacunas.Text = "Vacunas Aplicadas";
             // 
-            // txtEdad
+            // Nombre
             // 
-            this.txtEdad.Location = new System.Drawing.Point(45, 116);
-            this.txtEdad.Name = "txtEdad";
-            this.txtEdad.ReadOnly = true;
-            this.txtEdad.Size = new System.Drawing.Size(58, 20);
-            this.txtEdad.TabIndex = 37;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 150;
             // 
-            // txtEdadMeses
+            // Dosis
             // 
-            this.txtEdadMeses.Location = new System.Drawing.Point(143, 116);
-            this.txtEdadMeses.Name = "txtEdadMeses";
-            this.txtEdadMeses.ReadOnly = true;
-            this.txtEdadMeses.Size = new System.Drawing.Size(58, 20);
-            this.txtEdadMeses.TabIndex = 38;
+            this.Dosis.HeaderText = "Dosis";
+            this.Dosis.Name = "Dosis";
             // 
-            // lblApellido
+            // Fecha
             // 
-            this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(7, 55);
-            this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(47, 13);
-            this.lblApellido.TabIndex = 39;
-            this.lblApellido.Text = "Apellido:";
+            this.Fecha.HeaderText = "Fecha";
+            this.Fecha.Name = "Fecha";
             // 
-            // txtApellido
+            // btnAgregarVacuna
             // 
-            this.txtApellido.Location = new System.Drawing.Point(59, 52);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(200, 20);
-            this.txtApellido.TabIndex = 40;
+            this.btnAgregarVacuna.Location = new System.Drawing.Point(438, 404);
+            this.btnAgregarVacuna.Name = "btnAgregarVacuna";
+            this.btnAgregarVacuna.Size = new System.Drawing.Size(113, 23);
+            this.btnAgregarVacuna.TabIndex = 19;
+            this.btnAgregarVacuna.Text = "Agregar Vacuna";
+            this.btnAgregarVacuna.UseVisualStyleBackColor = true;
             // 
             // NuevaConsulta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(609, 727);
+            this.ClientSize = new System.Drawing.Size(609, 834);
             this.Controls.Add(this.gBoxConsulta);
             this.Controls.Add(this.gBoxPropietario);
             this.Controls.Add(this.gBoxMascota);
@@ -510,6 +566,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudDNI)).EndInit();
             this.gBoxConsulta.ResumeLayout(false);
             this.gBoxConsulta.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -559,5 +616,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label lblApellido;
+        private System.Windows.Forms.Label lblVacunas;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnAgregarVacuna;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Dosis;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
     }
 }
