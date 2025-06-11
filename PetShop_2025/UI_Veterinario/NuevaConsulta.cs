@@ -15,11 +15,16 @@ namespace PetShop_2025.UI_Veterinario
             this.Close();
         }
 
-        private void btnGuardarAtencion_Click(object sender, EventArgs e)
+        private void btnGuardarConsulta_Click(object sender, EventArgs e)
         {
 
         }
 
-        
+        private void btnAplicarVacuna_Click(object sender, EventArgs e)
+        {
+            Form formAplicarVacuna = new UI_Veterinario.AplicarVacuna();
+            formAplicarVacuna.DataBindings.Add();
+            formAplicarVacuna.ShowDialog();
+        }
     }
 }

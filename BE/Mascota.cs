@@ -78,5 +78,11 @@ namespace BE
             set { _historiasClinicas = value; }
         }
 
+        private List<VacunaAplicada> _vacunasAplicadas;
+        public List<VacunaAplicada> VacunasAplicadas
+        {
+            get { return _vacunasAplicadas; }
+            set { _vacunasAplicadas = value; }
+        }
     }
 }

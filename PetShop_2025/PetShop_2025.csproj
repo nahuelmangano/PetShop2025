@@ -109,6 +109,12 @@
     <Compile Include="UI_Veterinario\AgregarMedicamento.Designer.cs">
       <DependentUpon>AgregarMedicamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI_Veterinario\AplicarVacuna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Veterinario\AplicarVacuna.Designer.cs">
+      <DependentUpon>AplicarVacuna.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI_Veterinario\AtenderMascota.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI_Veterinario\AgregarMedicamento.resx">
       <DependentUpon>AgregarMedicamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Veterinario\AplicarVacuna.resx">
+      <DependentUpon>AplicarVacuna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI_Veterinario\AtenderMascota.resx">
       <DependentUpon>AtenderMascota.cs</DependentUpon>

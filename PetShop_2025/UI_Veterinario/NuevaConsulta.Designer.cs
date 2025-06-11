@@ -33,7 +33,7 @@
             this.lblDiagnostico = new System.Windows.Forms.Label();
             this.lblTratamiento = new System.Windows.Forms.Label();
             this.lblObservaciones = new System.Windows.Forms.Label();
-            this.btnGuardarAtencion = new System.Windows.Forms.Button();
+            this.btnGuardarConsulta = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtNombreMascota = new System.Windows.Forms.TextBox();
             this.txtNombrePropietario = new System.Windows.Forms.TextBox();
@@ -72,18 +72,18 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.nudDNI = new System.Windows.Forms.NumericUpDown();
             this.gBoxConsulta = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lblVacunas = new System.Windows.Forms.Label();
+            this.btnAplicarVacuna = new System.Windows.Forms.Button();
+            this.dgvVacunasAplicadas = new System.Windows.Forms.DataGridView();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dosis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnAgregarVacuna = new System.Windows.Forms.Button();
+            this.lblVacunas = new System.Windows.Forms.Label();
             this.gBoxMascota.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPeso)).BeginInit();
             this.gBoxPropietario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudDNI)).BeginInit();
             this.gBoxConsulta.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVacunasAplicadas)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFecha
@@ -131,15 +131,15 @@
             this.lblObservaciones.TabIndex = 6;
             this.lblObservaciones.Text = "Observaciones";
             // 
-            // btnGuardarAtencion
+            // btnGuardarConsulta
             // 
-            this.btnGuardarAtencion.Location = new System.Drawing.Point(376, 779);
-            this.btnGuardarAtencion.Name = "btnGuardarAtencion";
-            this.btnGuardarAtencion.Size = new System.Drawing.Size(106, 31);
-            this.btnGuardarAtencion.TabIndex = 7;
-            this.btnGuardarAtencion.Text = "Guardar Atención";
-            this.btnGuardarAtencion.UseVisualStyleBackColor = true;
-            this.btnGuardarAtencion.Click += new System.EventHandler(this.btnGuardarAtencion_Click);
+            this.btnGuardarConsulta.Location = new System.Drawing.Point(376, 779);
+            this.btnGuardarConsulta.Name = "btnGuardarConsulta";
+            this.btnGuardarConsulta.Size = new System.Drawing.Size(106, 31);
+            this.btnGuardarConsulta.TabIndex = 7;
+            this.btnGuardarConsulta.Text = "Guardar Consulta";
+            this.btnGuardarConsulta.UseVisualStyleBackColor = true;
+            this.btnGuardarConsulta.Click += new System.EventHandler(this.btnGuardarConsulta_Click);
             // 
             // btnCancelar
             // 
@@ -157,7 +157,6 @@
             this.txtNombreMascota.Name = "txtNombreMascota";
             this.txtNombreMascota.Size = new System.Drawing.Size(200, 20);
             this.txtNombreMascota.TabIndex = 9;
-            this.txtNombreMascota.Text = "\r\nHembra\r\n";
             // 
             // txtNombrePropietario
             // 
@@ -479,8 +478,8 @@
             // 
             // gBoxConsulta
             // 
-            this.gBoxConsulta.Controls.Add(this.btnAgregarVacuna);
-            this.gBoxConsulta.Controls.Add(this.dataGridView1);
+            this.gBoxConsulta.Controls.Add(this.btnAplicarVacuna);
+            this.gBoxConsulta.Controls.Add(this.dgvVacunasAplicadas);
             this.gBoxConsulta.Controls.Add(this.lblVacunas);
             this.gBoxConsulta.Controls.Add(this.lblFecha);
             this.gBoxConsulta.Controls.Add(this.dtpFecha);
@@ -499,26 +498,27 @@
             this.gBoxConsulta.TabStop = false;
             this.gBoxConsulta.Text = "Datos de la Consulta";
             // 
-            // dataGridView1
+            // btnAplicarVacuna
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.btnAplicarVacuna.Location = new System.Drawing.Point(438, 404);
+            this.btnAplicarVacuna.Name = "btnAplicarVacuna";
+            this.btnAplicarVacuna.Size = new System.Drawing.Size(113, 23);
+            this.btnAplicarVacuna.TabIndex = 19;
+            this.btnAplicarVacuna.Text = "Aplicar Vacuna";
+            this.btnAplicarVacuna.UseVisualStyleBackColor = true;
+            this.btnAplicarVacuna.Click += new System.EventHandler(this.btnAplicarVacuna_Click);
+            // 
+            // dgvVacunasAplicadas
+            // 
+            this.dgvVacunasAplicadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvVacunasAplicadas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
             this.Dosis,
             this.Fecha});
-            this.dataGridView1.Location = new System.Drawing.Point(13, 404);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(394, 77);
-            this.dataGridView1.TabIndex = 18;
-            // 
-            // lblVacunas
-            // 
-            this.lblVacunas.AutoSize = true;
-            this.lblVacunas.Location = new System.Drawing.Point(7, 377);
-            this.lblVacunas.Name = "lblVacunas";
-            this.lblVacunas.Size = new System.Drawing.Size(98, 13);
-            this.lblVacunas.TabIndex = 17;
-            this.lblVacunas.Text = "Vacunas Aplicadas";
+            this.dgvVacunasAplicadas.Location = new System.Drawing.Point(13, 404);
+            this.dgvVacunasAplicadas.Name = "dgvVacunasAplicadas";
+            this.dgvVacunasAplicadas.Size = new System.Drawing.Size(394, 77);
+            this.dgvVacunasAplicadas.TabIndex = 18;
             // 
             // Nombre
             // 
@@ -536,14 +536,14 @@
             this.Fecha.HeaderText = "Fecha";
             this.Fecha.Name = "Fecha";
             // 
-            // btnAgregarVacuna
+            // lblVacunas
             // 
-            this.btnAgregarVacuna.Location = new System.Drawing.Point(438, 404);
-            this.btnAgregarVacuna.Name = "btnAgregarVacuna";
-            this.btnAgregarVacuna.Size = new System.Drawing.Size(113, 23);
-            this.btnAgregarVacuna.TabIndex = 19;
-            this.btnAgregarVacuna.Text = "Agregar Vacuna";
-            this.btnAgregarVacuna.UseVisualStyleBackColor = true;
+            this.lblVacunas.AutoSize = true;
+            this.lblVacunas.Location = new System.Drawing.Point(7, 377);
+            this.lblVacunas.Name = "lblVacunas";
+            this.lblVacunas.Size = new System.Drawing.Size(98, 13);
+            this.lblVacunas.TabIndex = 17;
+            this.lblVacunas.Text = "Vacunas Aplicadas";
             // 
             // NuevaConsulta
             // 
@@ -554,7 +554,7 @@
             this.Controls.Add(this.gBoxPropietario);
             this.Controls.Add(this.gBoxMascota);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnGuardarAtencion);
+            this.Controls.Add(this.btnGuardarConsulta);
             this.Name = "NuevaConsulta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nueva Consulta";
@@ -566,7 +566,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudDNI)).EndInit();
             this.gBoxConsulta.ResumeLayout(false);
             this.gBoxConsulta.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVacunasAplicadas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -577,7 +577,7 @@
         private System.Windows.Forms.Label lblDiagnostico;
         private System.Windows.Forms.Label lblTratamiento;
         private System.Windows.Forms.Label lblObservaciones;
-        private System.Windows.Forms.Button btnGuardarAtencion;
+        private System.Windows.Forms.Button btnGuardarConsulta;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txtNombreMascota;
         private System.Windows.Forms.TextBox txtNombrePropietario;
@@ -617,8 +617,8 @@
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label lblVacunas;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnAgregarVacuna;
+        private System.Windows.Forms.DataGridView dgvVacunasAplicadas;
+        private System.Windows.Forms.Button btnAplicarVacuna;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dosis;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;

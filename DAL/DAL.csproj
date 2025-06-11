@@ -45,6 +45,8 @@
     <Compile Include="Medicamento.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vacuna.cs" />
+    <Compile Include="VacunaAplicada.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BE\BE.csproj">
