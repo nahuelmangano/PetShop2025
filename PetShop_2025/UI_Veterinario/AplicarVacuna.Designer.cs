@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.nudStockActual = new System.Windows.Forms.NumericUpDown();
+            this.nudNumeroDosis = new System.Windows.Forms.NumericUpDown();
             this.lblNumeroDosis = new System.Windows.Forms.Label();
             this.lblVacuna = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAplicar = new System.Windows.Forms.Button();
             this.cmbVacuna = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.nudStockActual)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNumeroDosis)).BeginInit();
             this.SuspendLayout();
             // 
-            // nudStockActual
+            // nudNumeroDosis
             // 
-            this.nudStockActual.Location = new System.Drawing.Point(84, 83);
-            this.nudStockActual.Minimum = new decimal(new int[] {
+            this.nudNumeroDosis.Location = new System.Drawing.Point(84, 83);
+            this.nudNumeroDosis.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.nudStockActual.Name = "nudStockActual";
-            this.nudStockActual.Size = new System.Drawing.Size(70, 20);
-            this.nudStockActual.TabIndex = 14;
-            this.nudStockActual.Value = new decimal(new int[] {
+            this.nudNumeroDosis.Name = "nudNumeroDosis";
+            this.nudNumeroDosis.Size = new System.Drawing.Size(70, 20);
+            this.nudNumeroDosis.TabIndex = 14;
+            this.nudNumeroDosis.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -106,7 +106,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(382, 211);
             this.Controls.Add(this.cmbVacuna);
-            this.Controls.Add(this.nudStockActual);
+            this.Controls.Add(this.nudNumeroDosis);
             this.Controls.Add(this.lblNumeroDosis);
             this.Controls.Add(this.lblVacuna);
             this.Controls.Add(this.btnCancelar);
@@ -115,14 +115,14 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Aplicar Vacuna";
             this.Load += new System.EventHandler(this.AplicarVacuna_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.nudStockActual)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNumeroDosis)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.NumericUpDown nudStockActual;
+        private System.Windows.Forms.NumericUpDown nudNumeroDosis;
         private System.Windows.Forms.Label lblNumeroDosis;
         private System.Windows.Forms.Label lblVacuna;
         private System.Windows.Forms.Button btnCancelar;

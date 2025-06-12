@@ -74,10 +74,10 @@
             this.gBoxConsulta = new System.Windows.Forms.GroupBox();
             this.btnAplicarVacuna = new System.Windows.Forms.Button();
             this.dgvVacunasAplicadas = new System.Windows.Forms.DataGridView();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dosis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblVacunas = new System.Windows.Forms.Label();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroDosis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaAplicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gBoxMascota.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPeso)).BeginInit();
             this.gBoxPropietario.SuspendLayout();
@@ -510,31 +510,18 @@
             // 
             // dgvVacunasAplicadas
             // 
+            this.dgvVacunasAplicadas.AllowUserToAddRows = false;
+            this.dgvVacunasAplicadas.AllowUserToDeleteRows = false;
             this.dgvVacunasAplicadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVacunasAplicadas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
-            this.Dosis,
-            this.Fecha});
+            this.numeroDosis,
+            this.FechaAplicacion});
             this.dgvVacunasAplicadas.Location = new System.Drawing.Point(13, 404);
             this.dgvVacunasAplicadas.Name = "dgvVacunasAplicadas";
-            this.dgvVacunasAplicadas.Size = new System.Drawing.Size(394, 77);
+            this.dgvVacunasAplicadas.ReadOnly = true;
+            this.dgvVacunasAplicadas.Size = new System.Drawing.Size(419, 77);
             this.dgvVacunasAplicadas.TabIndex = 18;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 150;
-            // 
-            // Dosis
-            // 
-            this.Dosis.HeaderText = "Dosis";
-            this.Dosis.Name = "Dosis";
-            // 
-            // Fecha
-            // 
-            this.Fecha.HeaderText = "Fecha";
-            this.Fecha.Name = "Fecha";
             // 
             // lblVacunas
             // 
@@ -544,6 +531,24 @@
             this.lblVacunas.Size = new System.Drawing.Size(98, 13);
             this.lblVacunas.TabIndex = 17;
             this.lblVacunas.Text = "Vacunas Aplicadas";
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 170;
+            // 
+            // numeroDosis
+            // 
+            this.numeroDosis.HeaderText = "Nº Dosis";
+            this.numeroDosis.Name = "numeroDosis";
+            this.numeroDosis.Width = 75;
+            // 
+            // FechaAplicacion
+            // 
+            this.FechaAplicacion.HeaderText = "Fecha de Aplicación";
+            this.FechaAplicacion.Name = "FechaAplicacion";
+            this.FechaAplicacion.Width = 130;
             // 
             // NuevaConsulta
             // 
@@ -558,6 +563,7 @@
             this.Name = "NuevaConsulta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nueva Consulta";
+            this.Load += new System.EventHandler(this.NuevaConsulta_Load);
             this.gBoxMascota.ResumeLayout(false);
             this.gBoxMascota.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPeso)).EndInit();
@@ -620,7 +626,7 @@
         private System.Windows.Forms.DataGridView dgvVacunasAplicadas;
         private System.Windows.Forms.Button btnAplicarVacuna;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dosis;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeroDosis;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaAplicacion;
     }
 }
