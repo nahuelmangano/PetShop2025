@@ -83,7 +83,7 @@ namespace PetShop_2025.UI_Veterinario
             }
             catch (BE.ExcepcionDeNegocio ex)
             {
-                MessageBox.Show(ex.Mensaje, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Mensaje, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             catch (Exception ex)
             {
@@ -107,7 +107,7 @@ namespace PetShop_2025.UI_Veterinario
             BLL.Vacuna vacunaBLL = new BLL.Vacuna();
             try
             {
-                List<BE.Vacuna> listaVacunas = vacunaBLL.Listar();
+                List<BE.Vacuna> listaVacunas = vacunaBLL.ListarVacunas();
                 cmbVacuna.DataSource = listaVacunas;
                 cmbVacuna.DisplayMember = "Nombre";
                 cmbVacuna.ValueMember = "ID";

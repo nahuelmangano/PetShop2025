@@ -35,7 +35,7 @@ namespace BLL
                 if (vacunaAplicada.NumeroDosis <= 0)
                     throw new BE.ExcepcionDeNegocio("El número de dosis debe ser mayor a cero");
 
-                return dal.Insertar(vacunaAplicada);
+                return dal.InsertarVacunaAplicada(vacunaAplicada);
             }
         }
     }

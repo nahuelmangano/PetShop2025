@@ -36,12 +36,12 @@
             this.btnGuardarConsulta = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtNombreMascota = new System.Windows.Forms.TextBox();
-            this.txtNombrePropietario = new System.Windows.Forms.TextBox();
+            this.txtNombreCliente = new System.Windows.Forms.TextBox();
             this.txtMotivo = new System.Windows.Forms.TextBox();
             this.txtDiagnostico = new System.Windows.Forms.TextBox();
             this.txtTratamiento = new System.Windows.Forms.TextBox();
             this.txtObservaciones = new System.Windows.Forms.TextBox();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaConsulta = new System.Windows.Forms.DateTimePicker();
             this.lblNombreMascota = new System.Windows.Forms.Label();
             this.lblEspecie = new System.Windows.Forms.Label();
             this.txtEspecie = new System.Windows.Forms.TextBox();
@@ -54,34 +54,34 @@
             this.gBoxMascota = new System.Windows.Forms.GroupBox();
             this.txtEdadMeses = new System.Windows.Forms.TextBox();
             this.txtEdad = new System.Windows.Forms.TextBox();
-            this.dtpFechaDeNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.lblEdadMeses = new System.Windows.Forms.Label();
             this.lblEdadAños = new System.Windows.Forms.Label();
             this.nudPeso = new System.Windows.Forms.NumericUpDown();
-            this.cmbEsterilizado = new System.Windows.Forms.ComboBox();
+            this.cmbEsterilizada = new System.Windows.Forms.ComboBox();
             this.cmbSexo = new System.Windows.Forms.ComboBox();
             this.lblPeso = new System.Windows.Forms.Label();
             this.lblEsterilizada = new System.Windows.Forms.Label();
             this.lblEdad = new System.Windows.Forms.Label();
             this.lblSexo = new System.Windows.Forms.Label();
             this.gBoxPropietario = new System.Windows.Forms.GroupBox();
-            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtApellidoCliente = new System.Windows.Forms.TextBox();
             this.lblApellido = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtEmailCliente = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.nudDNI = new System.Windows.Forms.NumericUpDown();
+            this.nudDNICliente = new System.Windows.Forms.NumericUpDown();
             this.gBoxConsulta = new System.Windows.Forms.GroupBox();
             this.btnAplicarVacuna = new System.Windows.Forms.Button();
             this.dgvVacunasAplicadas = new System.Windows.Forms.DataGridView();
-            this.lblVacunas = new System.Windows.Forms.Label();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeroDosis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaAplicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblVacunas = new System.Windows.Forms.Label();
             this.gBoxMascota.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPeso)).BeginInit();
             this.gBoxPropietario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDNI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDNICliente)).BeginInit();
             this.gBoxConsulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVacunasAplicadas)).BeginInit();
             this.SuspendLayout();
@@ -158,12 +158,12 @@
             this.txtNombreMascota.Size = new System.Drawing.Size(200, 20);
             this.txtNombreMascota.TabIndex = 9;
             // 
-            // txtNombrePropietario
+            // txtNombreCliente
             // 
-            this.txtNombrePropietario.Location = new System.Drawing.Point(59, 23);
-            this.txtNombrePropietario.Name = "txtNombrePropietario";
-            this.txtNombrePropietario.Size = new System.Drawing.Size(200, 20);
-            this.txtNombrePropietario.TabIndex = 10;
+            this.txtNombreCliente.Location = new System.Drawing.Point(59, 23);
+            this.txtNombreCliente.Name = "txtNombreCliente";
+            this.txtNombreCliente.Size = new System.Drawing.Size(200, 20);
+            this.txtNombreCliente.TabIndex = 10;
             // 
             // txtMotivo
             // 
@@ -197,13 +197,14 @@
             this.txtObservaciones.Size = new System.Drawing.Size(572, 45);
             this.txtObservaciones.TabIndex = 15;
             // 
-            // dtpFecha
+            // dtpFechaConsulta
             // 
-            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(112, 20);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(147, 20);
-            this.dtpFecha.TabIndex = 16;
+            this.dtpFechaConsulta.Enabled = false;
+            this.dtpFechaConsulta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaConsulta.Location = new System.Drawing.Point(112, 20);
+            this.dtpFechaConsulta.Name = "dtpFechaConsulta";
+            this.dtpFechaConsulta.Size = new System.Drawing.Size(147, 20);
+            this.dtpFechaConsulta.TabIndex = 16;
             // 
             // lblNombreMascota
             // 
@@ -284,12 +285,12 @@
             // 
             this.gBoxMascota.Controls.Add(this.txtEdadMeses);
             this.gBoxMascota.Controls.Add(this.txtEdad);
-            this.gBoxMascota.Controls.Add(this.dtpFechaDeNacimiento);
+            this.gBoxMascota.Controls.Add(this.dtpFechaNacimiento);
             this.gBoxMascota.Controls.Add(this.label1);
             this.gBoxMascota.Controls.Add(this.lblEdadMeses);
             this.gBoxMascota.Controls.Add(this.lblEdadAños);
             this.gBoxMascota.Controls.Add(this.nudPeso);
-            this.gBoxMascota.Controls.Add(this.cmbEsterilizado);
+            this.gBoxMascota.Controls.Add(this.cmbEsterilizada);
             this.gBoxMascota.Controls.Add(this.cmbSexo);
             this.gBoxMascota.Controls.Add(this.lblPeso);
             this.gBoxMascota.Controls.Add(this.lblEsterilizada);
@@ -326,13 +327,15 @@
             this.txtEdad.Size = new System.Drawing.Size(58, 20);
             this.txtEdad.TabIndex = 37;
             // 
-            // dtpFechaDeNacimiento
+            // dtpFechaNacimiento
             // 
-            this.dtpFechaDeNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaDeNacimiento.Location = new System.Drawing.Point(122, 86);
-            this.dtpFechaDeNacimiento.Name = "dtpFechaDeNacimiento";
-            this.dtpFechaDeNacimiento.Size = new System.Drawing.Size(137, 20);
-            this.dtpFechaDeNacimiento.TabIndex = 17;
+            this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(122, 86);
+            this.dtpFechaNacimiento.MaxDate = new System.DateTime(2025, 6, 12, 23, 44, 26, 0);
+            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(137, 20);
+            this.dtpFechaNacimiento.TabIndex = 17;
+            this.dtpFechaNacimiento.Value = new System.DateTime(2025, 6, 12, 0, 0, 0, 0);
             // 
             // label1
             // 
@@ -368,13 +371,13 @@
             this.nudPeso.Size = new System.Drawing.Size(65, 20);
             this.nudPeso.TabIndex = 31;
             // 
-            // cmbEsterilizado
+            // cmbEsterilizada
             // 
-            this.cmbEsterilizado.FormattingEnabled = true;
-            this.cmbEsterilizado.Location = new System.Drawing.Point(351, 117);
-            this.cmbEsterilizado.Name = "cmbEsterilizado";
-            this.cmbEsterilizado.Size = new System.Drawing.Size(121, 21);
-            this.cmbEsterilizado.TabIndex = 29;
+            this.cmbEsterilizada.FormattingEnabled = true;
+            this.cmbEsterilizada.Location = new System.Drawing.Point(351, 117);
+            this.cmbEsterilizada.Name = "cmbEsterilizada";
+            this.cmbEsterilizada.Size = new System.Drawing.Size(121, 21);
+            this.cmbEsterilizada.TabIndex = 29;
             // 
             // cmbSexo
             // 
@@ -422,13 +425,13 @@
             // 
             // gBoxPropietario
             // 
-            this.gBoxPropietario.Controls.Add(this.txtApellido);
+            this.gBoxPropietario.Controls.Add(this.txtApellidoCliente);
             this.gBoxPropietario.Controls.Add(this.lblApellido);
-            this.gBoxPropietario.Controls.Add(this.txtEmail);
+            this.gBoxPropietario.Controls.Add(this.txtEmailCliente);
             this.gBoxPropietario.Controls.Add(this.lblEmail);
-            this.gBoxPropietario.Controls.Add(this.nudDNI);
+            this.gBoxPropietario.Controls.Add(this.nudDNICliente);
             this.gBoxPropietario.Controls.Add(this.lblNombrePropietario);
-            this.gBoxPropietario.Controls.Add(this.txtNombrePropietario);
+            this.gBoxPropietario.Controls.Add(this.txtNombreCliente);
             this.gBoxPropietario.Controls.Add(this.lblDNI);
             this.gBoxPropietario.Location = new System.Drawing.Point(12, 170);
             this.gBoxPropietario.Name = "gBoxPropietario";
@@ -437,12 +440,12 @@
             this.gBoxPropietario.TabStop = false;
             this.gBoxPropietario.Text = "Datos del Propietario";
             // 
-            // txtApellido
+            // txtApellidoCliente
             // 
-            this.txtApellido.Location = new System.Drawing.Point(59, 52);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(200, 20);
-            this.txtApellido.TabIndex = 40;
+            this.txtApellidoCliente.Location = new System.Drawing.Point(59, 52);
+            this.txtApellidoCliente.Name = "txtApellidoCliente";
+            this.txtApellidoCliente.Size = new System.Drawing.Size(200, 20);
+            this.txtApellidoCliente.TabIndex = 40;
             // 
             // lblApellido
             // 
@@ -453,12 +456,12 @@
             this.lblApellido.TabIndex = 39;
             this.lblApellido.Text = "Apellido:";
             // 
-            // txtEmail
+            // txtEmailCliente
             // 
-            this.txtEmail.Location = new System.Drawing.Point(351, 52);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(200, 20);
-            this.txtEmail.TabIndex = 38;
+            this.txtEmailCliente.Location = new System.Drawing.Point(351, 52);
+            this.txtEmailCliente.Name = "txtEmailCliente";
+            this.txtEmailCliente.Size = new System.Drawing.Size(200, 20);
+            this.txtEmailCliente.TabIndex = 38;
             // 
             // lblEmail
             // 
@@ -469,12 +472,12 @@
             this.lblEmail.TabIndex = 37;
             this.lblEmail.Text = "Email:";
             // 
-            // nudDNI
+            // nudDNICliente
             // 
-            this.nudDNI.Location = new System.Drawing.Point(351, 23);
-            this.nudDNI.Name = "nudDNI";
-            this.nudDNI.Size = new System.Drawing.Size(200, 20);
-            this.nudDNI.TabIndex = 36;
+            this.nudDNICliente.Location = new System.Drawing.Point(351, 23);
+            this.nudDNICliente.Name = "nudDNICliente";
+            this.nudDNICliente.Size = new System.Drawing.Size(200, 20);
+            this.nudDNICliente.TabIndex = 36;
             // 
             // gBoxConsulta
             // 
@@ -482,7 +485,7 @@
             this.gBoxConsulta.Controls.Add(this.dgvVacunasAplicadas);
             this.gBoxConsulta.Controls.Add(this.lblVacunas);
             this.gBoxConsulta.Controls.Add(this.lblFecha);
-            this.gBoxConsulta.Controls.Add(this.dtpFecha);
+            this.gBoxConsulta.Controls.Add(this.dtpFechaConsulta);
             this.gBoxConsulta.Controls.Add(this.lblMotivo);
             this.gBoxConsulta.Controls.Add(this.txtObservaciones);
             this.gBoxConsulta.Controls.Add(this.txtMotivo);
@@ -523,6 +526,27 @@
             this.dgvVacunasAplicadas.Size = new System.Drawing.Size(419, 77);
             this.dgvVacunasAplicadas.TabIndex = 18;
             // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 170;
+            // 
+            // numeroDosis
+            // 
+            this.numeroDosis.HeaderText = "Nº Dosis";
+            this.numeroDosis.Name = "numeroDosis";
+            this.numeroDosis.ReadOnly = true;
+            this.numeroDosis.Width = 75;
+            // 
+            // FechaAplicacion
+            // 
+            this.FechaAplicacion.HeaderText = "Fecha de Aplicación";
+            this.FechaAplicacion.Name = "FechaAplicacion";
+            this.FechaAplicacion.ReadOnly = true;
+            this.FechaAplicacion.Width = 130;
+            // 
             // lblVacunas
             // 
             this.lblVacunas.AutoSize = true;
@@ -531,24 +555,6 @@
             this.lblVacunas.Size = new System.Drawing.Size(98, 13);
             this.lblVacunas.TabIndex = 17;
             this.lblVacunas.Text = "Vacunas Aplicadas";
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 170;
-            // 
-            // numeroDosis
-            // 
-            this.numeroDosis.HeaderText = "Nº Dosis";
-            this.numeroDosis.Name = "numeroDosis";
-            this.numeroDosis.Width = 75;
-            // 
-            // FechaAplicacion
-            // 
-            this.FechaAplicacion.HeaderText = "Fecha de Aplicación";
-            this.FechaAplicacion.Name = "FechaAplicacion";
-            this.FechaAplicacion.Width = 130;
             // 
             // NuevaConsulta
             // 
@@ -569,7 +575,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudPeso)).EndInit();
             this.gBoxPropietario.ResumeLayout(false);
             this.gBoxPropietario.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudDNI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudDNICliente)).EndInit();
             this.gBoxConsulta.ResumeLayout(false);
             this.gBoxConsulta.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVacunasAplicadas)).EndInit();
@@ -586,12 +592,12 @@
         private System.Windows.Forms.Button btnGuardarConsulta;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txtNombreMascota;
-        private System.Windows.Forms.TextBox txtNombrePropietario;
+        private System.Windows.Forms.TextBox txtNombreCliente;
         private System.Windows.Forms.TextBox txtMotivo;
         private System.Windows.Forms.TextBox txtDiagnostico;
         private System.Windows.Forms.TextBox txtTratamiento;
         private System.Windows.Forms.TextBox txtObservaciones;
-        private System.Windows.Forms.DateTimePicker dtpFecha;
+        private System.Windows.Forms.DateTimePicker dtpFechaConsulta;
         private System.Windows.Forms.Label lblNombreMascota;
         private System.Windows.Forms.Label lblEspecie;
         private System.Windows.Forms.TextBox txtEspecie;
@@ -607,20 +613,20 @@
         private System.Windows.Forms.Label lblSexo;
         private System.Windows.Forms.Label lblPeso;
         private System.Windows.Forms.NumericUpDown nudPeso;
-        private System.Windows.Forms.ComboBox cmbEsterilizado;
+        private System.Windows.Forms.ComboBox cmbEsterilizada;
         private System.Windows.Forms.ComboBox cmbSexo;
         private System.Windows.Forms.Label lblEdadMeses;
         private System.Windows.Forms.Label lblEdadAños;
         private System.Windows.Forms.GroupBox gBoxPropietario;
-        private System.Windows.Forms.NumericUpDown nudDNI;
-        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.NumericUpDown nudDNICliente;
+        private System.Windows.Forms.TextBox txtEmailCliente;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.GroupBox gBoxConsulta;
         private System.Windows.Forms.TextBox txtEdadMeses;
         private System.Windows.Forms.TextBox txtEdad;
-        private System.Windows.Forms.DateTimePicker dtpFechaDeNacimiento;
+        private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.TextBox txtApellidoCliente;
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label lblVacunas;
         private System.Windows.Forms.DataGridView dgvVacunasAplicadas;

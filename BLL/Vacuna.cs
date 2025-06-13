@@ -10,12 +10,12 @@ namespace BLL
     {
         DAL.Vacuna dal = new DAL.Vacuna();
 
-        public List<BE.Vacuna> Listar()
+        public List<BE.Vacuna> ListarVacunas()
         {
-            return dal.Listar();
+            return dal.ListarVacunas();
         }
 
-        public int Insertar(BE.Vacuna vacuna)
+        public int InsertarVacuna(BE.Vacuna vacuna)
         {
             if (vacuna == null)
                 throw new BE.ExcepcionDeNegocio("Vacuna no puede ser null");
@@ -26,7 +26,7 @@ namespace BLL
             if (vacuna.CantidadDosis <= 0)
                 throw new BE.ExcepcionDeNegocio("La cantidad de dosis debe ser mayor a cero");
 
-            return dal.Insertar(vacuna);
+            return dal.InsertarVacuna(vacuna);
         }
     }
 }
