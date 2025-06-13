@@ -12,13 +12,13 @@ namespace DAL
     {
         Conexion conexion = new Conexion();
 
-        public List<BE.Vacuna> Listar()
+        public List<BE.Vacuna> ListarVacunas()
         {
             try
             {
                 List<BE.Vacuna> lista = new List<BE.Vacuna>();
 
-                DataTable dt = conexion.LeerPorStoreProcedure("SP_Vacuna_Listar");
+                DataTable dt = conexion.LeerPorStoreProcedure("usp_listar_vacunas");
 
                 foreach (DataRow fila in dt.Rows)
                 {
@@ -40,7 +40,7 @@ namespace DAL
             }
         }
 
-        public int Insertar(BE.Vacuna vacuna)
+        public int InsertarVacuna(BE.Vacuna vacuna)
         {
             try
             {
@@ -50,7 +50,7 @@ namespace DAL
                     conexion.crearParametro("@CantidadDosis", vacuna.CantidadDosis)
                 };
 
-                return conexion.EscribirPorStoreProcedure("SP_Vacuna_Insertar", parametros.ToArray());
+                return conexion.EscribirPorStoreProcedure("usp_insertar_vacuna", parametros.ToArray());
             }
             catch (Exception ex)
             {
