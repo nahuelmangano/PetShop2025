@@ -21,10 +21,10 @@ namespace DAL
 
                 var parametros = new SqlParameter[]
                 {
-                    conexion.crearParametro("@ID_Mascota", idMascota)
+                    conexion.crearParametro("@MascotaID", idMascota)
                 };
 
-                DataTable dt = conexion.LeerPorStoreProcedure("SP_VacunaAplicada_ListarPorMascota", parametros);
+                DataTable dt = conexion.LeerPorStoreProcedure("usp_listar_vacunas_aplicadas_por_mascota", parametros);
 
                 foreach (DataRow fila in dt.Rows)
                 {
@@ -35,8 +35,8 @@ namespace DAL
                         FechaAplicacion = Convert.ToDateTime(fila["FechaAplicacion"]),
                         Vacuna = new BE.Vacuna
                         {
-                            ID = Convert.ToInt32(fila["ID_Vacuna"]),
-                            Nombre = fila["NombreVacuna"].ToString()
+                            ID = Convert.ToInt32(fila["VacunaId"]),
+                            Nombre = fila["Nombre"].ToString()
                         },
                         Mascota = new BE.Mascota { ID = idMascota }
                     };
@@ -52,7 +52,7 @@ namespace DAL
             }
         }
 
-        public int Insertar(BE.VacunaAplicada vacunaAplicada)
+        public int InsertarVacunaAplicada(BE.VacunaAplicada vacunaAplicada)
         {
             try
             {
@@ -60,11 +60,11 @@ namespace DAL
                 {
                     conexion.crearParametro("@NumeroDosis", vacunaAplicada.NumeroDosis),
                     conexion.crearParametro("@FechaAplicacion", vacunaAplicada.FechaAplicacion),
-                    conexion.crearParametro("@ID_Mascota", vacunaAplicada.Mascota.ID),
-                    conexion.crearParametro("@ID_Vacuna", vacunaAplicada.Vacuna.ID)
+                    conexion.crearParametro("@MascotaId", vacunaAplicada.Mascota.ID),
+                    conexion.crearParametro("@VacunaId", vacunaAplicada.Vacuna.ID)
                 };
 
-                return conexion.EscribirPorStoreProcedure("SP_VacunaAplicada_Insertar", parametros.ToArray());
+                return conexion.EscribirPorStoreProcedure("usp_insertar_vacuna_aplicada", parametros.ToArray());
             }
             catch (Exception ex)
             {
