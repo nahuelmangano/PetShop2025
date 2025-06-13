@@ -117,7 +117,7 @@ namespace DAL
 
         public BE.Usuario ValidarUsuario(string email, string password)
         {
-            string nombreStoreProcedure = "sp_validar_usuario";
+            string nombreStoreProcedure = "usp_validar_usuario";
             SqlParameter[] parametros = new SqlParameter[2];
             Conexion objConexion = new Conexion();
             parametros[0] = objConexion.crearParametro("@Email", email);
@@ -135,7 +135,7 @@ namespace DAL
             usuarioDeRetorno.Password = password;
 
             usuarioDeRetorno.Perfil = new BE.Perfil();
-            usuarioDeRetorno.Perfil.ID = int.Parse(dt.Rows[primeraFila]["IdPerfil"].ToString());
+            usuarioDeRetorno.Perfil.ID = int.Parse(dt.Rows[primeraFila]["PerfilId"].ToString());
             usuarioDeRetorno.Perfil.Descripcion = dt.Rows[primeraFila]["Descripcion"].ToString();
 
             return usuarioDeRetorno;
