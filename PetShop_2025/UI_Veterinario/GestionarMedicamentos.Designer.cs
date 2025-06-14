@@ -30,11 +30,14 @@
         {
             this.btnAgregarMedicamento = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.dgvMedicamentos = new System.Windows.Forms.DataGridView();
+            this.lblTitulo = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicamentos)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgregarMedicamento
             // 
-            this.btnAgregarMedicamento.Location = new System.Drawing.Point(284, 142);
+            this.btnAgregarMedicamento.Location = new System.Drawing.Point(622, 21);
             this.btnAgregarMedicamento.Name = "btnAgregarMedicamento";
             this.btnAgregarMedicamento.Size = new System.Drawing.Size(151, 43);
             this.btnAgregarMedicamento.TabIndex = 0;
@@ -52,17 +55,43 @@
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // dgvMedicamentos
+            // 
+            this.dgvMedicamentos.AllowUserToAddRows = false;
+            this.dgvMedicamentos.AllowUserToDeleteRows = false;
+            this.dgvMedicamentos.AllowUserToOrderColumns = true;
+            this.dgvMedicamentos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMedicamentos.Location = new System.Drawing.Point(12, 53);
+            this.dgvMedicamentos.Name = "dgvMedicamentos";
+            this.dgvMedicamentos.ReadOnly = true;
+            this.dgvMedicamentos.Size = new System.Drawing.Size(508, 179);
+            this.dgvMedicamentos.TabIndex = 4;
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Location = new System.Drawing.Point(12, 21);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(155, 13);
+            this.lblTitulo.TabIndex = 5;
+            this.lblTitulo.Text = "Medicamentos en el Inventario:";
+            // 
             // GestionarMedicamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblTitulo);
+            this.Controls.Add(this.dgvMedicamentos);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnAgregarMedicamento);
             this.Name = "GestionarMedicamentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestionar Medicamentos";
+            this.Load += new System.EventHandler(this.GestionarMedicamentos_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicamentos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -70,5 +99,7 @@
 
         private System.Windows.Forms.Button btnAgregarMedicamento;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.DataGridView dgvMedicamentos;
+        private System.Windows.Forms.Label lblTitulo;
     }
 }

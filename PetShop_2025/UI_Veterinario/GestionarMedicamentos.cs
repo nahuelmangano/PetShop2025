@@ -12,22 +12,36 @@ namespace PetShop_2025.UI_Veterinario
 {
     public partial class GestionarMedicamentos : Form
     {
+        private List<BE.Medicamento> listaMedicamentos;
         public GestionarMedicamentos()
         {
             InitializeComponent();
+            listaMedicamentos = new List<BE.Medicamento>();
         }
 
         private void btnAgregarMedicamento_Click(object sender, EventArgs e)
         {
             Form formAgregarMedicamento = new UI_Veterinario.AgregarMedicamento();
             formAgregarMedicamento.ShowDialog();
+            CargarDGVListaMedicamentos();
         }
-
-        //Agregar Funcionalidad para agregar vacunas
 
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void GestionarMedicamentos_Load(object sender, EventArgs e)
+        {
+            CargarDGVListaMedicamentos();
+        }
+
+        private void CargarDGVListaMedicamentos()
+        {   
+            BLL.Medicamento bllMedicamento = new BLL.Medicamento();
+            listaMedicamentos = bllMedicamento.ListarMedicamentos();
+            dgvMedicamentos.DataSource = null;
+            dgvMedicamentos.DataSource = listaMedicamentos;
         }
     }
 }
