@@ -34,14 +34,14 @@ namespace BLL
             else
                 unMedicamento.Estado = new BE.EstadoStock { ID = 1, Descripcion = "Normal" };
 
-            dalMedicamento.Insertar(unMedicamento);
+            dalMedicamento.InsertarMedicamento(unMedicamento);
 
             return true;
         }
 
         public List<BE.Medicamento> ListarMedicamentos()
         {
-            return dalMedicamento.Listar();
+            return dalMedicamento.ListarMedicamentos();
         }
 
         // Agregar métodos para editar, eliminar, buscar, reportes, etc.
