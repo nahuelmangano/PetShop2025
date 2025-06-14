@@ -133,7 +133,7 @@
             // 
             // btnGuardarConsulta
             // 
-            this.btnGuardarConsulta.Location = new System.Drawing.Point(376, 779);
+            this.btnGuardarConsulta.Location = new System.Drawing.Point(376, 834);
             this.btnGuardarConsulta.Name = "btnGuardarConsulta";
             this.btnGuardarConsulta.Size = new System.Drawing.Size(106, 31);
             this.btnGuardarConsulta.TabIndex = 7;
@@ -143,7 +143,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(488, 779);
+            this.btnCancelar.Location = new System.Drawing.Point(488, 834);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(106, 31);
             this.btnCancelar.TabIndex = 8;
@@ -496,7 +496,7 @@
             this.gBoxConsulta.Controls.Add(this.lblTratamiento);
             this.gBoxConsulta.Location = new System.Drawing.Point(12, 279);
             this.gBoxConsulta.Name = "gBoxConsulta";
-            this.gBoxConsulta.Size = new System.Drawing.Size(582, 494);
+            this.gBoxConsulta.Size = new System.Drawing.Size(582, 549);
             this.gBoxConsulta.TabIndex = 29;
             this.gBoxConsulta.TabStop = false;
             this.gBoxConsulta.Text = "Datos de la Consulta";
@@ -523,7 +523,7 @@
             this.dgvVacunasAplicadas.Location = new System.Drawing.Point(13, 404);
             this.dgvVacunasAplicadas.Name = "dgvVacunasAplicadas";
             this.dgvVacunasAplicadas.ReadOnly = true;
-            this.dgvVacunasAplicadas.Size = new System.Drawing.Size(419, 77);
+            this.dgvVacunasAplicadas.Size = new System.Drawing.Size(419, 139);
             this.dgvVacunasAplicadas.TabIndex = 18;
             // 
             // Nombre
@@ -560,7 +560,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(609, 834);
+            this.ClientSize = new System.Drawing.Size(609, 877);
             this.Controls.Add(this.gBoxConsulta);
             this.Controls.Add(this.gBoxPropietario);
             this.Controls.Add(this.gBoxMascota);
