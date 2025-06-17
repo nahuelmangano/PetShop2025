@@ -12,9 +12,11 @@ namespace PetShop_2025.UI_Vendedor
 {
     public partial class FormCrearCliente : Form
     {
-        public FormCrearCliente()
+        private Form formularioAnterior;
+        public FormCrearCliente(Form form)
         {
             InitializeComponent();
+            formularioAnterior = form;
         }
 
        
@@ -60,6 +62,12 @@ namespace PetShop_2025.UI_Vendedor
             {
                 MessageBox.Show("Ocurrió un error: " + ex.Message);
             }
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            formularioAnterior.Show();
         }
     }
 }

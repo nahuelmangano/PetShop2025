@@ -55,7 +55,7 @@ namespace PetShop_2025.UI_LogIn
             switch (UsuarioAutenticado.Perfil.ID)
             {
                 case 1: return new UI_Administrador.FormPanelAdmin();
-                case 2: return new UI_Vendedor.FormPanelVendedor();
+                case 2: return new UI_Vendedor.FormPanelVendedor(UsuarioAutenticado);
                 case 3: return new UI_Veterinario.MenuPrincipal();               
                 case 4: return new UI_Gerente.FormReportes();
                 default: return null;

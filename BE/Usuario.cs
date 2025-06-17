@@ -56,6 +56,10 @@ namespace BE
             get { return _perfil; }
             set { _perfil = value; }
         }
+        public override string ToString()
+        {
+            return $"{Nombre} {Apellido}";
+        }
 
     }
 }

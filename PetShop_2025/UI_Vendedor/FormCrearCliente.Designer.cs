@@ -35,7 +35,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnCrearCliente = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAtras = new System.Windows.Forms.Button();
             this.txtNombreCliente = new System.Windows.Forms.TextBox();
             this.txtApellidoCliente = new System.Windows.Forms.TextBox();
             this.txtMailCliente = new System.Windows.Forms.TextBox();
@@ -107,14 +107,15 @@
             this.btnCrearCliente.UseVisualStyleBackColor = true;
             this.btnCrearCliente.Click += new System.EventHandler(this.btnCrearCliente_Click);
             // 
-            // button2
+            // btnAtras
             // 
-            this.button2.Location = new System.Drawing.Point(642, 375);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAtras.Location = new System.Drawing.Point(642, 375);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(75, 23);
+            this.btnAtras.TabIndex = 5;
+            this.btnAtras.Text = "Atras";
+            this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // txtNombreCliente
             // 
@@ -161,7 +162,7 @@
             this.Controls.Add(this.txtMailCliente);
             this.Controls.Add(this.txtApellidoCliente);
             this.Controls.Add(this.txtNombreCliente);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.btnCrearCliente);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -185,7 +186,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnCrearCliente;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.TextBox txtNombreCliente;
         private System.Windows.Forms.TextBox txtApellidoCliente;
         private System.Windows.Forms.TextBox txtMailCliente;

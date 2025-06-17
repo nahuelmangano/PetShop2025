@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,39 +10,43 @@ namespace DAL
 {
     public class Clientes
     {
-        public List<BE.Usuario> ListarClientes()
+        public DataTable ListarClientes()
         {
-            List<BE.Cliente> lista = new List<BE.Cliente>();
-            List<BE.Usuario> usuarios = new List<BE.Usuario>();
+            Conexion db = new Conexion();
+            return db.LeerPorStoreProcedure("sp_listar_clientes", null);
+        }
+
+        public bool ActualizarCliente(BE.Cliente cliente)
+        {
             Conexion db = new Conexion();
 
-            DataTable dt = db.LeerPorStoreProcedure("sp_listar_clientes");
-
-            foreach (DataRow fila in dt.Rows)
+            SqlParameter[] parametros =
             {
-                var usuario = new BE.Usuario
-                {
-                    ID = Convert.ToInt32(fila["UsuarioId"]),
-                    Nombre = fila["Nombre"].ToString(),
-                    Apellido = fila["Apellido"].ToString(),
-                    Email = fila["Email"].ToString(),
-                    Password = fila["Password"].ToString(),
-                    Perfil = new BE.Perfil { ID = Convert.ToInt32(fila["PerfilId"]) }
-                };
+                db.crearParametro("@UsuarioId", cliente.UsuarioId),
+                db.crearParametro("@Nombre", cliente.Usuario.Nombre),
+                db.crearParametro("@Apellido", cliente.Usuario.Apellido),
+                db.crearParametro("@Email", cliente.Usuario.Email),
+                db.crearParametro("@Dni", cliente.Dni),
+                db.crearParametro("@Descuento_pts", cliente.DescuentoPts)
+            };
 
-                var cliente = new BE.Cliente
-                {
-                    UsuarioId = usuario.ID,
-                    Dni = fila["Dni"].ToString(),
-                    DescuentoPts = Convert.ToInt32(fila["Descuento_pts"])
-                };
+            db.EscribirPorStoreProcedure("sp_actualizar_cliente", parametros);
+            return true;
+        }
+        public DataTable BuscarClientes(string criterio, string valor)
+        {
+            Conexion db = new Conexion();
+            SqlParameter[] parametros = {
+            db.crearParametro("@Criterio", criterio),
+            db.crearParametro("@Valor", valor)
+            };
 
-                usuarios.Add(usuario);
-            }
-
-            return usuarios;
+            return db.LeerPorStoreProcedure("sp_buscar_cliente", parametros);
         }
 
 
+
+
     }
+
 }

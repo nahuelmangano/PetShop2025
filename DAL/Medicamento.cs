@@ -47,6 +47,7 @@ namespace DAL
                 SqlParameter[] parametros = new SqlParameter[]
                 {
                     conexion.crearParametro("@Nombre",unMedicamento.Nombre.Trim()),
+                    conexion.crearParametro("@Descripcion","NADA"),
                     conexion.crearParametro("@StockActual",unMedicamento.StockActual),
                     conexion.crearParametro("@StockMinimo", unMedicamento.StockMinimo),
                     conexion.crearParametro("@Estado",unMedicamento.Estado.Descripcion)

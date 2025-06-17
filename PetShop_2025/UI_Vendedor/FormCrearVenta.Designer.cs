@@ -33,12 +33,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSiguiente = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnAtras = new System.Windows.Forms.Button();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.cbClientes = new System.Windows.Forms.ComboBox();
             this.cbProductos = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.nudCantidad = new System.Windows.Forms.NumericUpDown();
+            this.btnAgregarProducto = new System.Windows.Forms.Button();
+            this.dgvDetalleVentas = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVentas)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -79,7 +82,7 @@
             // 
             // btnSiguiente
             // 
-            this.btnSiguiente.Location = new System.Drawing.Point(177, 303);
+            this.btnSiguiente.Location = new System.Drawing.Point(170, 251);
             this.btnSiguiente.Name = "btnSiguiente";
             this.btnSiguiente.Size = new System.Drawing.Size(75, 23);
             this.btnSiguiente.TabIndex = 4;
@@ -87,14 +90,15 @@
             this.btnSiguiente.UseVisualStyleBackColor = true;
             this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
-            // btnSalir
+            // btnAtras
             // 
-            this.btnSalir.Location = new System.Drawing.Point(450, 303);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 4;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnAtras.Location = new System.Drawing.Point(441, 251);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(75, 23);
+            this.btnAtras.TabIndex = 4;
+            this.btnAtras.Text = "Atras";
+            this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // dateTimePicker1
             // 
@@ -119,23 +123,43 @@
             this.cbProductos.Size = new System.Drawing.Size(121, 21);
             this.cbProductos.TabIndex = 7;
             // 
-            // numericUpDown1
+            // nudCantidad
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(472, 121);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 8;
+            this.nudCantidad.Location = new System.Drawing.Point(472, 121);
+            this.nudCantidad.Name = "nudCantidad";
+            this.nudCantidad.Size = new System.Drawing.Size(120, 20);
+            this.nudCantidad.TabIndex = 8;
+            // 
+            // btnAgregarProducto
+            // 
+            this.btnAgregarProducto.Location = new System.Drawing.Point(47, 189);
+            this.btnAgregarProducto.Name = "btnAgregarProducto";
+            this.btnAgregarProducto.Size = new System.Drawing.Size(176, 23);
+            this.btnAgregarProducto.TabIndex = 9;
+            this.btnAgregarProducto.Text = "Agregar Producto";
+            this.btnAgregarProducto.UseVisualStyleBackColor = true;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
+            // 
+            // dgvDetalleVentas
+            // 
+            this.dgvDetalleVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetalleVentas.Location = new System.Drawing.Point(47, 302);
+            this.dgvDetalleVentas.Name = "dgvDetalleVentas";
+            this.dgvDetalleVentas.Size = new System.Drawing.Size(596, 136);
+            this.dgvDetalleVentas.TabIndex = 10;
             // 
             // FormCrearVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.dgvDetalleVentas);
+            this.Controls.Add(this.btnAgregarProducto);
+            this.Controls.Add(this.nudCantidad);
             this.Controls.Add(this.cbProductos);
             this.Controls.Add(this.cbClientes);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.btnSiguiente);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -143,7 +167,8 @@
             this.Controls.Add(this.label1);
             this.Name = "FormCrearVenta";
             this.Text = "CrearVenta";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCantidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVentas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,10 +181,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSiguiente;
-        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox cbClientes;
         private System.Windows.Forms.ComboBox cbProductos;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nudCantidad;
+        private System.Windows.Forms.Button btnAgregarProducto;
+        private System.Windows.Forms.DataGridView dgvDetalleVentas;
     }
 }
