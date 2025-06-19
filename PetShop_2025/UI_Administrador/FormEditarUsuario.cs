@@ -48,9 +48,9 @@ namespace PetShop_2025.UI_Administrador
             bool editado = bllUsuario.ModificarUsuario(usuarioActual);
 
             if (editado)
-            {
+        {
                 MessageBox.Show("Usuario actualizado correctamente.");
-                this.Close();
+            this.Close();
                 formularioAnterior.Show();
             }
             else

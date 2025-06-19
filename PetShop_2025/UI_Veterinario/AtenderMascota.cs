@@ -12,6 +12,8 @@ namespace PetShop_2025.UI_Veterinario
 {
     public partial class AtenderMascota : Form
     {
+        private BE.Mascota mascotaSeleccionada;
+        private BE.Cliente clienteSeleccionado;
         public AtenderMascota()
         {
             InitializeComponent();
@@ -19,7 +21,7 @@ namespace PetShop_2025.UI_Veterinario
 
         private void btnNuevaConsulta_Click(object sender, EventArgs e)
         {
-            Form formNuevaConsulta = new UI_Veterinario.NuevaConsulta();
+            Form formNuevaConsulta = new UI_Veterinario.NuevaConsulta(mascotaSeleccionada, clienteSeleccionado);
             this.Hide();
             formNuevaConsulta.ShowDialog();
             this.Show();

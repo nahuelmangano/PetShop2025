@@ -14,8 +14,12 @@ namespace BE
 
         public Usuario Usuario { get; set; }  // propiedad para acceder a los datos del usuario
 
+        private List<Mascota> _mascotas;
+        public List<Mascota> Mascotas
         public override string ToString()
         {
+            get { return _mascotas; }
+            set { _mascotas = value; }
             return $"{Usuario.Nombre} {Usuario.Apellido}";
         }
         public string NombreCompleto => $"{Usuario.Nombre} {Usuario.Apellido}";

@@ -31,6 +31,7 @@ namespace PetShop_2025.UI_Veterinario
                     Nombre = txtNombre.Text,
                     StockActual = Convert.ToInt32(nudStockActual.Value),
                     StockMinimo = Convert.ToInt32(nudStockMinimo.Value),
+                    Descripcion = txtDescripcion.Text.Trim()
                 };
                 BLL.Medicamento bllMedicamento = new BLL.Medicamento();
 
@@ -40,7 +41,9 @@ namespace PetShop_2025.UI_Veterinario
                         $"Nombre:\t\t{beMedicamento.Nombre}\n" +
                         $"Stock Actual:\t{beMedicamento.StockActual}\n" +
                         $"Stock Mínimo:\t{beMedicamento.StockMinimo}\n" +
-                        $"Estado:\t\t{beMedicamento.Estado.Descripcion}\n");
+                        $"Estado:\t\t{beMedicamento.Estado.Descripcion}\n" +
+                        $"Descripción: \t{beMedicamento?.Descripcion}","Medicamento Ingresado");
+                    LimpiarCampos();
                 }
                 else
                 {
@@ -56,6 +59,14 @@ namespace PetShop_2025.UI_Veterinario
             {
                 MessageBox.Show("Ocurrió una Exception: " + ex.Message);
             }
+        }
+
+        private void LimpiarCampos()
+        {
+            txtNombre.Text = "";
+            nudStockActual.Value = 1;
+            nudStockMinimo.Value = 1;
+            txtDescripcion.Text = "";
         }
     }
 }

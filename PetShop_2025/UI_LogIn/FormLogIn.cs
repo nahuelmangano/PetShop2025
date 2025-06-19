@@ -66,7 +66,7 @@ namespace PetShop_2025.UI_LogIn
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-          this.Close();
+            this.Close();
 
         }
     }

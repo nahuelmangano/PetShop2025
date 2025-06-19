@@ -54,6 +54,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -163,6 +164,12 @@
     <Compile Include="UI_Veterinario\AgregarMedicamento.Designer.cs">
       <DependentUpon>AgregarMedicamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI_Veterinario\AplicarVacuna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Veterinario\AplicarVacuna.Designer.cs">
+      <DependentUpon>AplicarVacuna.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI_Veterinario\AtenderMascota.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +205,12 @@
     </Compile>
     <Compile Include="UI_Veterinario\NuevaConsulta.Designer.cs">
       <DependentUpon>NuevaConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Veterinario\SelecionarMascota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Veterinario\SelecionarMascota.Designer.cs">
+      <DependentUpon>SelecionarMascota.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="UI_Administrador\FormCrearUsuario.resx">
       <DependentUpon>FormCrearUsuario.cs</DependentUpon>
@@ -260,6 +273,9 @@
     <EmbeddedResource Include="UI_Veterinario\AgregarMedicamento.resx">
       <DependentUpon>AgregarMedicamento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI_Veterinario\AplicarVacuna.resx">
+      <DependentUpon>AplicarVacuna.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI_Veterinario\AtenderMascota.resx">
       <DependentUpon>AtenderMascota.cs</DependentUpon>
     </EmbeddedResource>
@@ -274,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI_Veterinario\NuevaConsulta.resx">
       <DependentUpon>NuevaConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Veterinario\SelecionarMascota.resx">
+      <DependentUpon>SelecionarMascota.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
