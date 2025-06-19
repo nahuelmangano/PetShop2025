@@ -36,13 +36,15 @@
             this.lblStockMinimo = new System.Windows.Forms.Label();
             this.nudStockActual = new System.Windows.Forms.NumericUpDown();
             this.nudStockMinimo = new System.Windows.Forms.NumericUpDown();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.lblDescripcion = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudStockActual)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudStockMinimo)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(15, 179);
+            this.btnAgregar.Location = new System.Drawing.Point(15, 229);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(75, 23);
             this.btnAgregar.TabIndex = 0;
@@ -52,7 +54,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(278, 179);
+            this.btnCancelar.Location = new System.Drawing.Point(278, 229);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(82, 23);
             this.btnCancelar.TabIndex = 1;
@@ -108,11 +110,29 @@
             this.nudStockMinimo.Size = new System.Drawing.Size(70, 20);
             this.nudStockMinimo.TabIndex = 7;
             // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(97, 143);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(263, 20);
+            this.txtDescripcion.TabIndex = 19;
+            // 
+            // lblDescripcion
+            // 
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Location = new System.Drawing.Point(12, 146);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(66, 13);
+            this.lblDescripcion.TabIndex = 18;
+            this.lblDescripcion.Text = "Descripción:";
+            // 
             // AgregarMedicamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(381, 217);
+            this.ClientSize = new System.Drawing.Size(381, 264);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.nudStockMinimo);
             this.Controls.Add(this.nudStockActual);
             this.Controls.Add(this.lblStockMinimo);
@@ -141,5 +161,7 @@
         private System.Windows.Forms.Label lblStockMinimo;
         private System.Windows.Forms.NumericUpDown nudStockActual;
         private System.Windows.Forms.NumericUpDown nudStockMinimo;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Label lblDescripcion;
     }
 }

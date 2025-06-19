@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
+<<<<<<< HEAD
     public class Cliente
     {
         public int UsuarioId { get; set; } // igual al Id generado en Usuarios
@@ -23,3 +24,24 @@ namespace BE
     }
 }
 
+=======
+    public class Cliente : Usuario
+    {
+        private int _dni;
+        public int Dni
+        {
+            get { return _dni; }
+            set { _dni = value; }
+        }
+
+        private List<Mascota> _mascotas;
+        public List<Mascota> Mascotas
+        {
+            get { return _mascotas; }
+            set { _mascotas = value; }
+        }
+
+
+    }
+}
+>>>>>>> origin/feature/atenderMascota

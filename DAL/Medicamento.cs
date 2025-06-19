@@ -12,25 +12,35 @@ namespace DAL
     {
         private Conexion conexion = new Conexion();
 
-        public List<BE.Medicamento> Listar()
+        public List<BE.Medicamento> ListarMedicamentos()
         {
             try
             {
                 SqlParameter[] parametros = new SqlParameter[] { };
-                DataTable tabla = conexion.LeerPorStoreProcedure("SP_Medicamento_Listar", parametros);
+                DataTable tabla = conexion.LeerPorStoreProcedure("usp_listar_medicamentos", parametros);
                 List<BE.Medicamento> listaMedicamentos = new List<BE.Medicamento>();
+
                 foreach (DataRow fila in tabla.Rows)
                 {
+                    BE.EstadoStock estado = new BE.EstadoStock
+                    {
+                        ID = Convert.ToInt32(fila["EstadoStockId"]),
+                        Descripcion = fila["EstadoStockDescripcion"].ToString()
+                    };
+
                     BE.Medicamento unMedicamento = new BE.Medicamento
                     {
                         ID = Convert.ToInt32(fila["Id"]),
                         Nombre = fila["Nombre"].ToString(),
+                        Descripcion = fila["Descripcion"].ToString(),
                         StockActual = Convert.ToInt32(fila["StockActual"]),
                         StockMinimo = Convert.ToInt32(fila["StockMinimo"]),
-                        //Estado = (BE.Medicamento.EstadoStock)Convert.ToInt32(fila["Estado"])
+                        Estado = estado
                     };
+
                     listaMedicamentos.Add(unMedicamento);
                 }
+
                 return listaMedicamentos;
             }
             catch (Exception ex)
@@ -39,10 +49,10 @@ namespace DAL
             }
         }
 
-        public bool Insertar(BE.Medicamento unMedicamento) {
+        public bool InsertarMedicamento(BE.Medicamento unMedicamento) {
             try
             {
-                string nombreStoreProcedure = "SP_Medicamento_Insertar";
+                string nombreStoreProcedure = "usp_insertar_medicamento";
 
                 SqlParameter[] parametros = new SqlParameter[]
                 {
@@ -50,7 +60,8 @@ namespace DAL
                     conexion.crearParametro("@Descripcion","NADA"),
                     conexion.crearParametro("@StockActual",unMedicamento.StockActual),
                     conexion.crearParametro("@StockMinimo", unMedicamento.StockMinimo),
-                    conexion.crearParametro("@Estado",unMedicamento.Estado.Descripcion)
+                    conexion.crearParametro("@Estado",unMedicamento.Estado.Descripcion),
+                    conexion.crearParametro("@Descripcion", unMedicamento.Descripcion.Trim())
                 };
                 //REFACTURE: Validar antes de escribir que el ingreso no se encuentre en la DB.
                 int filasAfectadas = conexion.EscribirPorStoreProcedure(nombreStoreProcedure, parametros);

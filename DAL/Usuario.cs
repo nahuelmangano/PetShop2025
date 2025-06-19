@@ -99,11 +99,17 @@ namespace DAL
             {
                 usuarioAuxiliar = new BE.Usuario();
 
+<<<<<<< HEAD
                 usuarioAuxiliar.ID = int.Parse(fila["id"].ToString());
                 usuarioAuxiliar.Nombre = fila["nombre"].ToString();
                 usuarioAuxiliar.Apellido= fila["apellido"].ToString();
                 usuarioAuxiliar.Email = fila["email"].ToString();
                 usuarioAuxiliar.Password = fila["Password"].ToString();
+=======
+                usuarioAuxiliar.ID = int.Parse(fila["id_Usuario"].ToString());
+                usuarioAuxiliar.Nombre = fila["nombre_Usuario"].ToString();
+                usuarioAuxiliar.Apellido= fila["apellido_Usuario"].ToString();
+>>>>>>> origin/feature/atenderMascota
                 usuarioAuxiliar.Perfil = new BE.Perfil();
                 usuarioAuxiliar.Perfil.ID = int.Parse(fila[0].ToString());
                 usuarioAuxiliar.Perfil.Descripcion = fila[1].ToString();
@@ -119,7 +125,11 @@ namespace DAL
 
         public BE.Usuario ValidarUsuario(string email, string password)
         {
+<<<<<<< HEAD
             string nombreStoreProcedure = "sp_validar_usuario";
+=======
+            string nombreStoreProcedure = "usp_validar_usuario";
+>>>>>>> origin/feature/atenderMascota
             SqlParameter[] parametros = new SqlParameter[2];
             Conexion objConexion = new Conexion();
             parametros[0] = objConexion.crearParametro("@Email", email);
@@ -132,7 +142,11 @@ namespace DAL
 
             BE.Usuario usuarioDeRetorno = new BE.Usuario();
             int primeraFila = 0;
+<<<<<<< HEAD
             usuarioDeRetorno.ID = int.Parse(dt.Rows[primeraFila]["Id"].ToString());
+=======
+            usuarioDeRetorno.ID = int.Parse(dt.Rows[primeraFila]["ID"].ToString());
+>>>>>>> origin/feature/atenderMascota
             usuarioDeRetorno.Email = dt.Rows[primeraFila]["Email"].ToString();
             usuarioDeRetorno.Password = password;
 
@@ -143,6 +157,7 @@ namespace DAL
             return usuarioDeRetorno;
         }
 
+<<<<<<< HEAD
         public bool ActualizarUsuario(BE.Usuario usuario) {
             string nombreStoreProcedure = "sp_EditarUsuario";
             SqlParameter[] parametros = new SqlParameter[6];
@@ -165,6 +180,8 @@ namespace DAL
 
         }
 
+=======
+>>>>>>> origin/feature/atenderMascota
 
 
     }

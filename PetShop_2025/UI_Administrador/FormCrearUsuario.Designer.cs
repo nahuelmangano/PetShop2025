@@ -130,7 +130,7 @@
             // 
             this.btnCrearUsuario.Location = new System.Drawing.Point(252, 338);
             this.btnCrearUsuario.Name = "btnCrearUsuario";
-            this.btnCrearUsuario.Size = new System.Drawing.Size(147, 23);
+            this.btnCrearUsuario.Size = new System.Drawing.Size(75, 23);
             this.btnCrearUsuario.TabIndex = 2;
             this.btnCrearUsuario.Text = "Crear";
             this.btnCrearUsuario.UseVisualStyleBackColor = true;

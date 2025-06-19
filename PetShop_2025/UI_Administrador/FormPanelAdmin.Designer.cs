@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.btnCrearUsuario = new System.Windows.Forms.Button();
+            this.btnEditarUsuario = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnListarUsuarios = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
@@ -92,6 +93,7 @@
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.btnListarUsuarios);
             this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnEditarUsuario);
             this.Controls.Add(this.btnCrearUsuario);
             this.Controls.Add(this.label1);
             this.Name = "FormPanelAdmin";
@@ -105,6 +107,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCrearUsuario;
+        private System.Windows.Forms.Button btnEditarUsuario;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnListarUsuarios;
         private System.Windows.Forms.Button btnCerrarSesion;

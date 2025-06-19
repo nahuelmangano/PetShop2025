@@ -54,6 +54,10 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+<<<<<<< HEAD
+=======
+    <Reference Include="System.DirectoryServices" />
+>>>>>>> origin/feature/atenderMascota
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -103,6 +107,7 @@
     <Compile Include="UI_LogIn\FormLogIn.Designer.cs">
       <DependentUpon>FormLogIn.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="UI_Vendedor\FormBuscarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,12 +162,23 @@
     <Compile Include="UI_Vendedor\FormListarVentas.Designer.cs">
       <DependentUpon>FormListarVentas.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> origin/feature/atenderMascota
     <Compile Include="UI_Veterinario\AgregarMedicamento.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI_Veterinario\AgregarMedicamento.Designer.cs">
       <DependentUpon>AgregarMedicamento.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="UI_Veterinario\AplicarVacuna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Veterinario\AplicarVacuna.Designer.cs">
+      <DependentUpon>AplicarVacuna.cs</DependentUpon>
+    </Compile>
+>>>>>>> origin/feature/atenderMascota
     <Compile Include="UI_Veterinario\AtenderMascota.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,12 +215,24 @@
     <Compile Include="UI_Veterinario\NuevaConsulta.Designer.cs">
       <DependentUpon>NuevaConsulta.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <EmbeddedResource Include="UI_Administrador\FormCrearUsuario.resx">
       <DependentUpon>FormCrearUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI_Administrador\FormEditarUsuario.resx">
       <DependentUpon>FormEditarUsuario.cs</DependentUpon>
     </EmbeddedResource>
+=======
+    <Compile Include="UI_Veterinario\SelecionarMascota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Veterinario\SelecionarMascota.Designer.cs">
+      <DependentUpon>SelecionarMascota.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI_Administrador\FormCrearUsuario.resx">
+      <DependentUpon>FormCrearUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> origin/feature/atenderMascota
     <EmbeddedResource Include="UI_Administrador\FormListarUsuario.resx">
       <DependentUpon>FormListarUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -214,6 +242,7 @@
     <EmbeddedResource Include="UI_Gerente\FormReportes.resx">
       <DependentUpon>FormReportes.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="UI_Vendedor\FormBuscarCliente.resx">
       <DependentUpon>FormBuscarCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -241,6 +270,8 @@
     <EmbeddedResource Include="UI_Vendedor\FormListarVentas.resx">
       <DependentUpon>FormListarVentas.cs</DependentUpon>
     </EmbeddedResource>
+=======
+>>>>>>> origin/feature/atenderMascota
     <EmbeddedResource Include="UI_Vendedor\FormPanelVendedor.resx">
       <DependentUpon>FormPanelVendedor.cs</DependentUpon>
     </EmbeddedResource>
@@ -260,6 +291,12 @@
     <EmbeddedResource Include="UI_Veterinario\AgregarMedicamento.resx">
       <DependentUpon>AgregarMedicamento.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
+=======
+    <EmbeddedResource Include="UI_Veterinario\AplicarVacuna.resx">
+      <DependentUpon>AplicarVacuna.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> origin/feature/atenderMascota
     <EmbeddedResource Include="UI_Veterinario\AtenderMascota.resx">
       <DependentUpon>AtenderMascota.cs</DependentUpon>
     </EmbeddedResource>
@@ -275,6 +312,12 @@
     <EmbeddedResource Include="UI_Veterinario\NuevaConsulta.resx">
       <DependentUpon>NuevaConsulta.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
+=======
+    <EmbeddedResource Include="UI_Veterinario\SelecionarMascota.resx">
+      <DependentUpon>SelecionarMascota.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> origin/feature/atenderMascota
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
