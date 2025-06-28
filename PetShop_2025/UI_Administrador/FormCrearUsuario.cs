@@ -71,7 +71,7 @@ namespace PetShop_2025.UI_Administrador
             if (string.IsNullOrWhiteSpace(txtApellido.Text)) //Apellido del usuario
             {
                 throw new BE.ExcepcionDeNegocio("El campo 'Apellido' del usuario es obligatorio.");
-            }   
+            }
             if (string.IsNullOrWhiteSpace(txtEmail.Text)) // Mail del usuario
             {
                 throw new BE.ExcepcionDeNegocio("El campo 'Email' del usuario es obligatorio.");
