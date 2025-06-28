@@ -21,5 +21,7 @@ namespace PetShop_2025.UI_Administrador
         {
             this.Close();
         }
+
+        
     }
 }

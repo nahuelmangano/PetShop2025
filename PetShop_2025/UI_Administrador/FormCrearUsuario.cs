@@ -61,5 +61,25 @@ namespace PetShop_2025.UI_Administrador
         {
             this.Close();
         }
+
+        private void ValidarCamposUsuario()
+        {
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))   //Nombre del usuario
+            {
+                throw new BE.ExcepcionDeNegocio("El campo 'nombre' del usuario es obligatorio.");
+            }
+            if (string.IsNullOrWhiteSpace(txtApellido.Text)) //Apellido del usuario
+            {
+                throw new BE.ExcepcionDeNegocio("El campo 'Apellido' del usuario es obligatorio.");
+            }   
+            if (string.IsNullOrWhiteSpace(txtEmail.Text)) // Mail del usuario
+            {
+                throw new BE.ExcepcionDeNegocio("El campo 'Email' del usuario es obligatorio.");
+            }
+            if (string.IsNullOrWhiteSpace(txtContraseña.Text)) // Contraseña
+            {
+                throw new BE.ExcepcionDeNegocio("El campo 'Contraseña' del usuario es obligatorio.");
+            }
+        }
     }
 }
