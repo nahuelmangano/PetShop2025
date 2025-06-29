@@ -24,6 +24,7 @@ namespace PetShop_2025.UI_Administrador
 
             try
             {
+                ValidarCamposUsuario();
                 // Cargar datos del formulario al objeto usuario
                 nuevoUsuario.Nombre = txtNombre.Text.Trim();
                 nuevoUsuario.Apellido = txtApellido.Text.Trim();
