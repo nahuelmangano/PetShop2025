@@ -21,9 +21,11 @@ namespace PetShop_2025.UI_Veterinario
 
         private void btnNuevaConsulta_Click(object sender, EventArgs e)
         {
-            Form formNuevaConsulta = new UI_Veterinario.NuevaConsulta(mascotaSeleccionada, clienteSeleccionado);
+            //Form formNuevaConsulta = new UI_Veterinario.NuevaConsulta(mascotaSeleccionada, clienteSeleccionado);
+            Form formSeleccionarMascota = new UI_Veterinario.SelecionarMascota(mascotaSeleccionada, clienteSeleccionado);
             this.Hide();
-            formNuevaConsulta.ShowDialog();
+            //formNuevaConsulta.ShowDialog();
+            formSeleccionarMascota.ShowDialog();
             this.Show();
         }
 

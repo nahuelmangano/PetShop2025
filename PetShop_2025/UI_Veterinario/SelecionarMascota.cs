@@ -27,15 +27,38 @@ namespace PetShop_2025.UI_Veterinario
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Form formAtenderMascota = new UI_Veterinario.AtenderMascota();
-            this.Hide();
-            formAtenderMascota.ShowDialog();
+            this.Close();
 
         }
 
         private void btnContinuar_Click(object sender, EventArgs e)
         {
+            Form formAtenderMascota;
 
+            if (rbtnNuevoIngreso.Checked)
+            {
+                MessageBox.Show("NUEVO INGRESO");
+                // Crear nuevos objetos vacíos para un nuevo ingreso
+                BE.Cliente nuevoCliente = new BE.Cliente();
+                BE.Mascota nuevaMascota = new BE.Mascota();
+
+                formAtenderMascota = new UI_Veterinario.NuevaConsulta(nuevaMascota,nuevoCliente);
+                formAtenderMascota.ShowDialog();
+            }
+            else if (rbtnSeleccionarMascota.Checked)
+            {
+                MessageBox.Show("MASCOTAS EN BBDD");
+                // Usar los objetos seleccionados
+                //formAtenderMascota = new UI_Veterinario.NuevaConsulta(nuevaMascota, nuevoCliente);
+            }
+            else
+            {
+                MessageBox.Show("Seleccioná una opción para continuar.");
+                return;
+            }
+
+            this.Hide();
+            //formAtenderMascota.ShowDialog();
         }
     }
 }

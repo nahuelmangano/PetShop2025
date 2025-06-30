@@ -77,8 +77,8 @@ namespace PetShop_2025.UI_Veterinario
             RellenarCMBEsterilizada();
             RellenarCMBSexo();
 
-            Form formSeleccionarMascota = new UI_Veterinario.SelecionarMascota(mascotaSeleccionada, clienteSeleccionado);
-            formSeleccionarMascota.ShowDialog();
+            //Form formSeleccionarMascota = new UI_Veterinario.SelecionarMascota(mascotaSeleccionada, clienteSeleccionado);
+            //formSeleccionarMascota.ShowDialog();
         }
 
         private void RellenarCMBSexo()
