@@ -8,11 +8,31 @@ namespace BLL
 {
     public class Usuario
     {
+        public BE.Usuario ValidarUsuario(string unEmail, string unaPassword)
+        {
+
+            if (string.IsNullOrWhiteSpace(unEmail))
+            {
+                throw new BE.ExcepcionDeNegocio("Falta completar el nombre de usuario");
+            }
+
+            if (string.IsNullOrWhiteSpace(unaPassword))
+            {
+                throw new BE.ExcepcionDeNegocio("Falta completar la contraseña de usuario");
+            }
+
+            //Es porque tiene nombre y password
+
+            DAL.Usuario dalUsuario = new DAL.Usuario();
+
+            return dalUsuario.ValidarUsuario(unEmail, unaPassword);
+        }
+
         public bool CrearUsuario(BE.Usuario usuario)
         {
 
             DAL.Usuario dalUsuario = new DAL.Usuario();
-            dalUsuario.crear(usuario);
+            dalUsuario.CrearUsuario(usuario);
 
             return true;
 
@@ -22,7 +42,7 @@ namespace BLL
         {
 
             DAL.Usuario dalUsuario = new DAL.Usuario();
-            dalUsuario.modificar(usuario);
+            dalUsuario.ActualizarUsuario(usuario);
 
             return true;
 
@@ -37,7 +57,7 @@ namespace BLL
 
             foreach (BE.Usuario unUsuario in usuarios)
             {
-                if (unUsuario.PasswordUsuario == password.Trim() && unUsuario.EmailUsuario == usuarioMail.Trim())
+                if (unUsuario.Password == password.Trim() && unUsuario.Email == usuarioMail.Trim())
                 {
                     return true;
                 }
@@ -47,6 +67,20 @@ namespace BLL
 
             }
             return false;
+        }
+
+        public List<BE.Usuario> ListarUsuarios() 
+        { 
+            DAL.Usuario dalUsuario= new DAL.Usuario();
+
+            List<BE.Usuario> usuarios = dalUsuario.Usuarios();
+
+
+            return usuarios;
+
+
+
+
         }
 
 

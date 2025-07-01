@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PetShop_2025
+namespace PetShop_2025.UI_Veterinario
 {
-    public partial class f_PanelAdmin : Form
+    public partial class BuscarHistorialMedico : Form
     {
-        public f_PanelAdmin()
+        public BuscarHistorialMedico()
         {
             InitializeComponent();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

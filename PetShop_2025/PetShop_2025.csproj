@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -32,9 +47,17 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+<<<<<<< HEAD
+=======
+    <Reference Include="System.DirectoryServices" />
+>>>>>>> origin/feature/atenderMascota
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,25 +69,211 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="f_LogIn.cs">
+    <Compile Include="UI_Administrador\FormCrearUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="f_LogIn.Designer.cs">
-      <DependentUpon>f_LogIn.cs</DependentUpon>
+    <Compile Include="UI_Administrador\FormCrearUsuario.Designer.cs">
+      <DependentUpon>FormCrearUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="f_PanelAdmin.cs">
+    <Compile Include="UI_Administrador\FormEditarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="f_PanelAdmin.Designer.cs">
-      <DependentUpon>f_PanelAdmin.cs</DependentUpon>
+    <Compile Include="UI_Administrador\FormEditarUsuario.Designer.cs">
+      <DependentUpon>FormEditarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Administrador\FormListarUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Administrador\FormListarUsuario.Designer.cs">
+      <DependentUpon>FormListarUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Administrador\FormPanelAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Administrador\FormPanelAdmin.Designer.cs">
+      <DependentUpon>FormPanelAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Gerente\FormReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Gerente\FormReportes.Designer.cs">
+      <DependentUpon>FormReportes.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="f_LogIn.resx">
-      <DependentUpon>f_LogIn.cs</DependentUpon>
+    <Compile Include="UI_LogIn\FormLogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_LogIn\FormLogIn.Designer.cs">
+      <DependentUpon>FormLogIn.cs</DependentUpon>
+    </Compile>
+<<<<<<< HEAD
+    <Compile Include="UI_Vendedor\FormBuscarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormBuscarCliente.Designer.cs">
+      <DependentUpon>FormBuscarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormComprasCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormComprasCliente.Designer.cs">
+      <DependentUpon>FormComprasCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormCrearVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormCrearVenta.Designer.cs">
+      <DependentUpon>FormCrearVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormCrearCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormCrearCliente.Designer.cs">
+      <DependentUpon>FormCrearCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormDetalleVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormDetalleVenta.Designer.cs">
+      <DependentUpon>FormDetalleVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormDetalleVentaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormDetalleVentaCliente.Designer.cs">
+      <DependentUpon>FormDetalleVentaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormEditarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormEditarCliente.Designer.cs">
+      <DependentUpon>FormEditarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormListarClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormListarClientes.Designer.cs">
+      <DependentUpon>FormListarClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormListarVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormListarVentas.Designer.cs">
+      <DependentUpon>FormListarVentas.cs</DependentUpon>
+    </Compile>
+=======
+>>>>>>> origin/feature/atenderMascota
+    <Compile Include="UI_Veterinario\AgregarMedicamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Veterinario\AgregarMedicamento.Designer.cs">
+      <DependentUpon>AgregarMedicamento.cs</DependentUpon>
+    </Compile>
+<<<<<<< HEAD
+=======
+    <Compile Include="UI_Veterinario\AplicarVacuna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Veterinario\AplicarVacuna.Designer.cs">
+      <DependentUpon>AplicarVacuna.cs</DependentUpon>
+    </Compile>
+>>>>>>> origin/feature/atenderMascota
+    <Compile Include="UI_Veterinario\AtenderMascota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Veterinario\AtenderMascota.Designer.cs">
+      <DependentUpon>AtenderMascota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Veterinario\BuscarHistorialMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Veterinario\BuscarHistorialMedico.Designer.cs">
+      <DependentUpon>BuscarHistorialMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Veterinario\GestionarMedicamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Veterinario\GestionarMedicamentos.Designer.cs">
+      <DependentUpon>GestionarMedicamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Veterinario\MenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Veterinario\MenuPrincipal.Designer.cs">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormPanelVendedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormPanelVendedor.Designer.cs">
+      <DependentUpon>FormPanelVendedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Veterinario\NuevaConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Veterinario\NuevaConsulta.Designer.cs">
+      <DependentUpon>NuevaConsulta.cs</DependentUpon>
+    </Compile>
+<<<<<<< HEAD
+    <EmbeddedResource Include="UI_Administrador\FormCrearUsuario.resx">
+      <DependentUpon>FormCrearUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="f_PanelAdmin.resx">
-      <DependentUpon>f_PanelAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="UI_Administrador\FormEditarUsuario.resx">
+      <DependentUpon>FormEditarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+=======
+    <Compile Include="UI_Veterinario\SelecionarMascota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Veterinario\SelecionarMascota.Designer.cs">
+      <DependentUpon>SelecionarMascota.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI_Administrador\FormCrearUsuario.resx">
+      <DependentUpon>FormCrearUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> origin/feature/atenderMascota
+    <EmbeddedResource Include="UI_Administrador\FormListarUsuario.resx">
+      <DependentUpon>FormListarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Administrador\FormPanelAdmin.resx">
+      <DependentUpon>FormPanelAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Gerente\FormReportes.resx">
+      <DependentUpon>FormReportes.cs</DependentUpon>
+    </EmbeddedResource>
+<<<<<<< HEAD
+    <EmbeddedResource Include="UI_Vendedor\FormBuscarCliente.resx">
+      <DependentUpon>FormBuscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Vendedor\FormComprasCliente.resx">
+      <DependentUpon>FormComprasCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Vendedor\FormCrearVenta.resx">
+      <DependentUpon>FormCrearVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Vendedor\FormCrearCliente.resx">
+      <DependentUpon>FormCrearCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Vendedor\FormDetalleVenta.resx">
+      <DependentUpon>FormDetalleVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Vendedor\FormDetalleVentaCliente.resx">
+      <DependentUpon>FormDetalleVentaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Vendedor\FormEditarCliente.resx">
+      <DependentUpon>FormEditarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Vendedor\FormListarClientes.resx">
+      <DependentUpon>FormListarClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Vendedor\FormListarVentas.resx">
+      <DependentUpon>FormListarVentas.cs</DependentUpon>
+    </EmbeddedResource>
+=======
+>>>>>>> origin/feature/atenderMascota
+    <EmbeddedResource Include="UI_Vendedor\FormPanelVendedor.resx">
+      <DependentUpon>FormPanelVendedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -74,7 +283,41 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI_LogIn\FormLogIn.resx">
+      <DependentUpon>FormLogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Veterinario\AgregarMedicamento.resx">
+      <DependentUpon>AgregarMedicamento.cs</DependentUpon>
+    </EmbeddedResource>
+<<<<<<< HEAD
+=======
+    <EmbeddedResource Include="UI_Veterinario\AplicarVacuna.resx">
+      <DependentUpon>AplicarVacuna.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> origin/feature/atenderMascota
+    <EmbeddedResource Include="UI_Veterinario\AtenderMascota.resx">
+      <DependentUpon>AtenderMascota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Veterinario\BuscarHistorialMedico.resx">
+      <DependentUpon>BuscarHistorialMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Veterinario\GestionarMedicamentos.resx">
+      <DependentUpon>GestionarMedicamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Veterinario\MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Veterinario\NuevaConsulta.resx">
+      <DependentUpon>NuevaConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+<<<<<<< HEAD
+=======
+    <EmbeddedResource Include="UI_Veterinario\SelecionarMascota.resx">
+      <DependentUpon>SelecionarMascota.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> origin/feature/atenderMascota
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -87,6 +330,28 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BE\BE.csproj">
+      <Project>{e8fe7e62-17f0-465f-a4c2-b53548b964bb}</Project>
+      <Name>BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{56651cc9-d8fd-4c58-989d-283884b0449d}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -6,58 +6,63 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class Usuario
+    public class Usuario : IEntidad
     {
-        private string _nombreUsuario;
-        public string NombreUsuario
+        private int _id;
+
+        public int ID
         {
-            get { return _nombreUsuario; }
-            set { _nombreUsuario = value; }
+            get { return _id; }
+            set { _id = value; }
         }
 
-        private string _apellidoUsuario;
-
-
-        public string ApellidoUsuario
+        private string _nombre;
+        public string Nombre
         {
-            get { return _apellidoUsuario; }
-            set { _apellidoUsuario = value; }
+            get { return _nombre; }
+            set { _nombre = value; }
+        }
+
+        private string _apellido;
+
+
+        public string Apellido
+        {
+            get { return _apellido; }
+            set { _apellido = value; }
         }
 
 
-        private string _emailUsuario;
+        private string _email;
 
-        public string EmailUsuario
+        public string Email
         {
-            get { return _emailUsuario; }
-            set { _emailUsuario = value; }
+            get { return _email; }
+            set { _email = value; }
         }
 
-        private string _passwordUsuario;
+        private string _password;
 
-        public string PasswordUsuario
+        public string Password
         {
-            get { return _passwordUsuario; }
-            set { _passwordUsuario = value; }
+            get { return _password; }
+            set { _password = value; }
         }
 
-        public enum PerfilUsuario
+        private Perfil _perfil;
+
+        public Perfil Perfil
         {
-            Administrador = 1,
-            Gerente = 2,
-            Ventas = 3,
-            Compras = 4,
-            Cliente = 5
+            get { return _perfil; }
+            set { _perfil = value; }
         }
-
-        private int _perfilUsuario;
-
-
-        public int Perfil
+<<<<<<< HEAD
+        public override string ToString()
         {
-            get { return _perfilUsuario; }
-            set { _perfilUsuario = value; }
+            return $"{Nombre} {Apellido}";
         }
+=======
+>>>>>>> origin/feature/atenderMascota
 
     }
 }
