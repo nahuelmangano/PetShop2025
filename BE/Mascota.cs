@@ -84,5 +84,12 @@ namespace BE
             get { return _vacunasAplicadas; }
             set { _vacunasAplicadas = value; }
         }
+
+        private Cliente _propietario;
+        public Cliente Propietario
+        {
+            get { return _propietario; }
+            set { _propietario = value; }
+        }
     }
 }
