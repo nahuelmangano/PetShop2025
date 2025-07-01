@@ -152,6 +152,12 @@
     <Compile Include="UI_Veterinario\NuevaConsulta.Designer.cs">
       <DependentUpon>NuevaConsulta.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI_Veterinario\NuevoIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Veterinario\NuevoIngreso.Designer.cs">
+      <DependentUpon>NuevoIngreso.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI_Veterinario\SelecionarMascota.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI_Veterinario\NuevaConsulta.resx">
       <DependentUpon>NuevaConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Veterinario\NuevoIngreso.resx">
+      <DependentUpon>NuevoIngreso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI_Veterinario\SelecionarMascota.resx">
       <DependentUpon>SelecionarMascota.cs</DependentUpon>
