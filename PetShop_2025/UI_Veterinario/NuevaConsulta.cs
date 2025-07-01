@@ -9,14 +9,13 @@ namespace PetShop_2025.UI_Veterinario
     public partial class NuevaConsulta : Form
     {
         private BE.Mascota mascotaSeleccionada;
-        private BE.Cliente clienteSeleccionado;
         private List<BE.VacunaAplicada> vacunasAplicadas = new List<BE.VacunaAplicada>();
+        private bool esNuevoIngreso; // Indica si es un nuevo ingreso
 
-        public NuevaConsulta(BE.Mascota mascotaSeleccionada, BE.Cliente clienteSeleccionado)
+        public NuevaConsulta(BE.Mascota mascota)
         {
             InitializeComponent();
-            this.mascotaSeleccionada = mascotaSeleccionada ?? new BE.Mascota();
-            this.clienteSeleccionado = clienteSeleccionado ?? new BE.Cliente();
+            this.mascotaSeleccionada =  mascota;
 
         }
 
@@ -63,7 +62,7 @@ namespace PetShop_2025.UI_Veterinario
             // Formato del formulario al cargar
             dgvVacunasAplicadas.CellFormatting += dgvVacunasAplicadas_CellFormatting; // Evento para formatear las celdas de la grilla
 
-            // Etablecer los valores por defecto de los campos del formulario
+            // Establecer los valores por defecto de los campos del formulario
             dtpFechaNacimiento.MaxDate = DateTime.Now; // Establecer la fecha máxima de nacimiento a la fecha actual
             dtpFechaConsulta.Value = DateTime.Now; // Establecer la fecha de la consulta a la fecha actual
             dtpFechaConsulta.Enabled = false; // Deshabilitar el campo de fecha de consulta para que no se pueda modificar
@@ -72,8 +71,25 @@ namespace PetShop_2025.UI_Veterinario
             RellenarCMBEsterilizada();
             RellenarCMBSexo();
 
-            Form formSeleccionarMascota = new UI_Veterinario.SelecionarMascota(mascotaSeleccionada, clienteSeleccionado);
-            formSeleccionarMascota.ShowDialog();
+            if (mascotaSeleccionada != null)
+            {
+                // Si se ha pasado una mascota, cargar sus datos en el formulario
+                RellenarCamposMascota();
+                // Cargar los datos del cliente asociado a la mascota
+                RellenarCamposPropietario();
+                // Buscar las vacunas aplicadas a la mascota
+                BuscarVacunasAplicadas();
+                // Actualizar la grilla de vacunas aplicadas
+                ActualizarDGVVacunasAplicadas();
+                esNuevoIngreso = false; // Indicar que no es un nuevo ingreso
+            }
+            else
+            {
+                // Si no se ha pasado una mascota, inicializar un nuevo objeto mascota
+                mascotaSeleccionada = new BE.Mascota();
+                mascotaSeleccionada.Propietario = new BE.Cliente(); // Inicializar el propietario
+                esNuevoIngreso = true; // Indicar que es un nuevo ingreso
+            }
         }
 
         private void RellenarCMBSexo()
@@ -88,7 +104,7 @@ namespace PetShop_2025.UI_Veterinario
         {
             cmbEsterilizada.DataSource = new[]
             {
-                new { Texto = "Sí", Valor = true },
+                new { Texto = "Si", Valor = true },
                 new { Texto = "No", Valor = false }
             };
 
@@ -101,22 +117,22 @@ namespace PetShop_2025.UI_Veterinario
             dgvVacunasAplicadas.AutoGenerateColumns = false;
             dgvVacunasAplicadas.Columns.Clear();
 
-            // Columna Nombre de la Vacuna
+            // Columna Nombre de la Vacuna y Cantidad de Dosis
             var colNombre = new DataGridViewTextBoxColumn();
-            colNombre.HeaderText = "Nombre";
-            colNombre.DataPropertyName = "Vacuna"; // Lo manejamos en CellFormatting
+            colNombre.HeaderText = "Nombre (Cant. Dosis)";
+            colNombre.DataPropertyName = "Vacuna"; 
             dgvVacunasAplicadas.Columns.Add(colNombre);
 
-            // Columna Nº Dosis
+            // Columna Dosis Aplicadas
             var colDosis = new DataGridViewTextBoxColumn();
-            colDosis.HeaderText = "Nº Dosis";
+            colDosis.HeaderText = "Dosis Aplicadas";
             colDosis.DataPropertyName = "NumeroDosis";
             dgvVacunasAplicadas.Columns.Add(colDosis);
 
             // Columna Fecha
             var colFecha = new DataGridViewTextBoxColumn();
-            colFecha.HeaderText = "Fecha";
-            colFecha.DataPropertyName = "FechaAplicacion";
+            colFecha.HeaderText = "Fecha"; // Lo manejamos en CellFormatting
+            colFecha.DataPropertyName = "FechaAplicacion"; 
             dgvVacunasAplicadas.Columns.Add(colFecha);
 
 
@@ -133,6 +149,43 @@ namespace PetShop_2025.UI_Veterinario
                 {
                     e.Value = fecha.ToShortDateString(); // Mostrar solo la fecha, sin hora
                 }
+            }
+        }
+
+        private void RellenarCamposMascota()
+        {
+            // Asignar los valores del objeto mascotaSeleccionada a los campos del formulario
+            txtNombreMascota.Text = mascotaSeleccionada.Nombre;
+            txtEspecie.Text = mascotaSeleccionada.Especie;
+            cmbSexo.SelectedItem = mascotaSeleccionada.Sexo;
+            nudPeso.Value = mascotaSeleccionada.Peso;
+            txtRaza.Text = mascotaSeleccionada.Raza;
+            dtpFechaNacimiento.Value = mascotaSeleccionada.FechaNacimiento;
+            txtColor.Text = mascotaSeleccionada.Color;
+            cmbEsterilizada.SelectedValue = mascotaSeleccionada.Esterilizada;
+            gBoxMascota.Enabled = false; // Deshabilitar el grupo de campos de la mascota para evitar modificaciones
+        }
+
+        private void RellenarCamposPropietario()
+        {
+            // Asignar los valores del objeto mascotaSeleccionada.Propietario a los campos del formulario
+            if (mascotaSeleccionada.Propietario != null)
+            {
+                txtNombreCliente.Text = mascotaSeleccionada.Propietario.Nombre;
+                txtApellidoCliente.Text = mascotaSeleccionada.Propietario.Apellido;
+                nudDNICliente.Value = mascotaSeleccionada.Propietario.DNI;
+                txtEmailCliente.Text = mascotaSeleccionada.Propietario.Email;
+                gBoxPropietario.Enabled = false; // Deshabilitar el grupo de campos del propietario para evitar modificaciones
+            }
+        }
+
+        private void BuscarVacunasAplicadas()
+        {
+            BLL.VacunaAplicada vacunasEncontradas = new BLL.VacunaAplicada();
+            if (mascotaSeleccionada != null && mascotaSeleccionada.ID > 0)
+            {
+                // Buscar las vacunas aplicadas a la mascota seleccionada
+                vacunasAplicadas = vacunasEncontradas.ListarPorMascota(mascotaSeleccionada.ID);
             }
         }
 

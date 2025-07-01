@@ -367,6 +367,11 @@
             // nudPeso
             // 
             this.nudPeso.Location = new System.Drawing.Point(194, 53);
+            this.nudPeso.Maximum = new decimal(new int[] {
+            99999999,
+            0,
+            0,
+            0});
             this.nudPeso.Name = "nudPeso";
             this.nudPeso.Size = new System.Drawing.Size(65, 20);
             this.nudPeso.TabIndex = 31;
@@ -475,6 +480,11 @@
             // nudDNICliente
             // 
             this.nudDNICliente.Location = new System.Drawing.Point(351, 23);
+            this.nudDNICliente.Maximum = new decimal(new int[] {
+            999999999,
+            0,
+            0,
+            0});
             this.nudDNICliente.Name = "nudDNICliente";
             this.nudDNICliente.Size = new System.Drawing.Size(200, 20);
             this.nudDNICliente.TabIndex = 36;
