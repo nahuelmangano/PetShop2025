@@ -9,7 +9,7 @@ namespace BE
     public class Cliente : Usuario
     {
         private int _dni;
-        public int Dni
+        public int DNI
         {
             get { return _dni; }
             set { _dni = value; }
@@ -22,6 +22,10 @@ namespace BE
             set { _mascotas = value; }
         }
 
+        public override string ToString()
+        {
+            return $"{Nombre} {Apellido} - {DNI}";
+        }
 
     }
 }
