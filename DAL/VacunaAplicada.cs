@@ -36,7 +36,8 @@ namespace DAL
                         Vacuna = new BE.Vacuna
                         {
                             ID = Convert.ToInt32(fila["VacunaId"]),
-                            Nombre = fila["Nombre"].ToString()
+                            Nombre = fila["Nombre"].ToString(),
+                            CantidadDosis = Convert.ToInt32(fila["CantidadDosis"])
                         },
                         Mascota = new BE.Mascota { ID = idMascota }
                     };
