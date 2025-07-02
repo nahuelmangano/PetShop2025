@@ -42,8 +42,8 @@ namespace PetShop_2025.UI_Veterinario
                 {
                     // Si no se encontró el cliente, mostrar un mensaje
                     MessageBox.Show("No se encontró un cliente con ese DNI. Complete los datos para ingresarlo al sistema.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    gBoxDatosCliente.Enabled = true;
-                    return;
+                    gBoxDatosCliente.Enabled = true; // Habilitar el grupo de datos del cliente para que se puedan ingresar los datos
+                    
                 }
                 else 
                 {
@@ -56,16 +56,6 @@ namespace PetShop_2025.UI_Veterinario
                     tBoxEmail.Text = clienteEncontrado.Email;
                     
                 }
-                    BE.Cliente cliente = new BE.Cliente();
-                int primeraFila = 0;
-
-
-                gBoxDatosCliente.Enabled = true;
-                txtNombre.Text = cliente.Nombre;
-                txtApellido.Text = cliente.Apellido;
-                txtDNI.Text = cliente.DNI.ToString();
-                txtTelefono.Text = cliente.Telefono;
-                txtEmail.Text = cliente.Email;
             }
             catch (Exception ex)
             {
