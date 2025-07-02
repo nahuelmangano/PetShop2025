@@ -41,11 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="Mascota.cs" />
-=======
-    <Compile Include="Clientes.cs" />
->>>>>>> develop
+    <Compile Include="Cliente.cs" />
     <Compile Include="Medicamento.cs" />
     <Compile Include="Productos.cs" />
     <Compile Include="Usuario.cs" />
