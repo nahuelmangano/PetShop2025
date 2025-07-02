@@ -40,7 +40,7 @@ namespace DAL
             db.crearParametro("@Valor", valor)
             };
 
-            return db.LeerPorStoreProcedure("sp_buscar_cliente", parametros);
+            return db.LeerPorStoreProcedure("usp_buscar_cliente", parametros);
         }
 
         public BE.Cliente ObtenerClientePorDNI(int dni)

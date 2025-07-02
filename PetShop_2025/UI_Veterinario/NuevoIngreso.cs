@@ -29,6 +29,14 @@ namespace PetShop_2025.UI_Veterinario
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+            // Limpiar los campos del grupo de datos del cliente
+            tBoxNombre.Clear();
+            tBoxApellido.Clear();
+            nudDNI.Value = 0;
+            tBoxEmail.Clear();
+            gBoxDatosCliente.Enabled = false; // Deshabilitar el grupo de datos del cliente hasta que se encuentre o se ingrese un nuevo cliente
+
+            // Validar que se haya ingresado un DNI
             if (nudBuscarDNI.Value == 0 || nudBuscarDNI.Value < 10000000)
             {
                 MessageBox.Show("Debe ingresar un DNI para buscar al cliente y poder Continuar con la consulta.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -43,6 +51,9 @@ namespace PetShop_2025.UI_Veterinario
                     // Si no se encontró el cliente, mostrar un mensaje
                     MessageBox.Show("No se encontró un cliente con ese DNI. Complete los datos para ingresarlo al sistema.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     gBoxDatosCliente.Enabled = true; // Habilitar el grupo de datos del cliente para que se puedan ingresar los datos
+                    // Se asigna el DNI ingresado al nudDNI
+                    nudDNI.Value = dni;
+                    nudDNI.Enabled = false;
                     
                 }
                 else 
