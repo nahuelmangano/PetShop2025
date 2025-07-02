@@ -33,6 +33,7 @@
             this.btnEditarUsuario = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnListarUsuarios = new System.Windows.Forms.Button();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -46,7 +47,7 @@
             // 
             // btnCrearUsuario
             // 
-            this.btnCrearUsuario.Location = new System.Drawing.Point(324, 93);
+            this.btnCrearUsuario.Location = new System.Drawing.Point(324, 123);
             this.btnCrearUsuario.Name = "btnCrearUsuario";
             this.btnCrearUsuario.Size = new System.Drawing.Size(95, 23);
             this.btnCrearUsuario.TabIndex = 1;
@@ -75,7 +76,7 @@
             // 
             // btnListarUsuarios
             // 
-            this.btnListarUsuarios.Location = new System.Drawing.Point(324, 175);
+            this.btnListarUsuarios.Location = new System.Drawing.Point(324, 243);
             this.btnListarUsuarios.Name = "btnListarUsuarios";
             this.btnListarUsuarios.Size = new System.Drawing.Size(95, 23);
             this.btnListarUsuarios.TabIndex = 5;
@@ -83,11 +84,22 @@
             this.btnListarUsuarios.UseVisualStyleBackColor = true;
             this.btnListarUsuarios.Click += new System.EventHandler(this.btnListarUsuarios_Click);
             // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.Location = new System.Drawing.Point(646, 22);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(101, 23);
+            this.btnCerrarSesion.TabIndex = 6;
+            this.btnCerrarSesion.Text = "Cerrar Sesion";
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
             // FormPanelAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.btnListarUsuarios);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEditarUsuario);
@@ -107,5 +119,6 @@
         private System.Windows.Forms.Button btnEditarUsuario;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnListarUsuarios;
+        private System.Windows.Forms.Button btnCerrarSesion;
     }
 }

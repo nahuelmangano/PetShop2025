@@ -12,9 +12,11 @@ namespace PetShop_2025.UI_Administrador
 {
     public partial class FormListarUsuario : Form
     {
-        public FormListarUsuario()
+        private Form formularioAnterior;
+        public FormListarUsuario(Form form)
         {
             InitializeComponent();
+            formularioAnterior = form;
             CargarUsuarios();
 
 
@@ -44,8 +46,8 @@ namespace PetShop_2025.UI_Administrador
                 //dgwListarUsuarios.Columns["Password"].Visible = false;
                 //dgwListarUsuarios.Columns["Perfil"].Visible = false; // Si no querés mostrar el objeto Perfil entero
 
-                // Si querés mostrar el nombre del perfil en una columna aparte:
-                // Podrías usar un BindingList o transformar la lista a una anónima con Select, 
+                // mostrar el nombre del perfil en una columna aparte:
+                // usar un BindingList o transformar la lista a una anónima con Select, 
                 // o agregar una propiedad extra en BE.Usuario que devuelva el perfil.Nombre
             }
             catch (Exception ex)
@@ -56,7 +58,24 @@ namespace PetShop_2025.UI_Administrador
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
+            //Form formularioDePanelAdmin = new UI_Administrador.FormPanelAdmin();    
             this.Close();
+            formularioAnterior.Show();
+        }
+
+        private void btn_EditarUsuario_Click(object sender, EventArgs e)
+        {
+            if (dgwListarUsuarios.SelectedRows.Count == 1)
+            {
+                var usuarioSeleccionado = (BE.Usuario)dgwListarUsuarios.SelectedRows[0].DataBoundItem;
+                var formEditar = new UI_Administrador.FormEditarUsuario(this, usuarioSeleccionado); // este formulario lo creamos ahora
+                this.Hide();
+                formEditar.Show();
+            }
+            else
+            {
+                MessageBox.Show("Por favor seleccioná un usuario para editar.");
+            }
         }
     }
     }

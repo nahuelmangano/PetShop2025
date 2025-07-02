@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.lblMascota = new System.Windows.Forms.Label();
+            this.lblPropietario = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.lblMotivo = new System.Windows.Forms.Label();
             this.lblDiagnostico = new System.Windows.Forms.Label();
@@ -85,6 +87,24 @@
             this.gBoxConsulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVacunasAplicadas)).BeginInit();
             this.SuspendLayout();
+            // 
+            // lblMascota
+            // 
+            this.lblMascota.AutoSize = true;
+            this.lblMascota.Location = new System.Drawing.Point(12, 12);
+            this.lblMascota.Name = "lblMascota";
+            this.lblMascota.Size = new System.Drawing.Size(48, 13);
+            this.lblMascota.TabIndex = 0;
+            this.lblMascota.Text = "Mascota";
+            // 
+            // lblPropietario
+            // 
+            this.lblPropietario.AutoSize = true;
+            this.lblPropietario.Location = new System.Drawing.Point(12, 113);
+            this.lblPropietario.Name = "lblPropietario";
+            this.lblPropietario.Size = new System.Drawing.Size(57, 13);
+            this.lblPropietario.TabIndex = 1;
+            this.lblPropietario.Text = "Propietario";
             // 
             // lblFecha
             // 
@@ -590,10 +610,14 @@
             this.gBoxConsulta.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVacunasAplicadas)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label lblMascota;
+        private System.Windows.Forms.Label lblPropietario;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblMotivo;
         private System.Windows.Forms.Label lblDiagnostico;

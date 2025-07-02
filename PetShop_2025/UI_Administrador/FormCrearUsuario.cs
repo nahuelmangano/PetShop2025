@@ -12,9 +12,11 @@ namespace PetShop_2025.UI_Administrador
 {
     public partial class FormCrearUsuario : Form
     {
-        public FormCrearUsuario()
+        private Form formularioAnterior;
+        public FormCrearUsuario(Form form)
         {
             InitializeComponent();
+            formularioAnterior = form;
         }
 
         private void btnCrearUsuario_Click(object sender, EventArgs e)
@@ -59,7 +61,9 @@ namespace PetShop_2025.UI_Administrador
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
+            //Form formularioDePanelAdmin = new UI_Administrador.FormPanelAdmin();    
             this.Close();
+            formularioAnterior.Show();
         }
     }
 }

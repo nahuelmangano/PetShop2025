@@ -104,6 +104,60 @@
     <Compile Include="UI_LogIn\FormLogIn.Designer.cs">
       <DependentUpon>FormLogIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI_Vendedor\FormBuscarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormBuscarCliente.Designer.cs">
+      <DependentUpon>FormBuscarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormComprasCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormComprasCliente.Designer.cs">
+      <DependentUpon>FormComprasCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormCrearVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormCrearVenta.Designer.cs">
+      <DependentUpon>FormCrearVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormCrearCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormCrearCliente.Designer.cs">
+      <DependentUpon>FormCrearCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormDetalleVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormDetalleVenta.Designer.cs">
+      <DependentUpon>FormDetalleVenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormDetalleVentaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormDetalleVentaCliente.Designer.cs">
+      <DependentUpon>FormDetalleVentaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormEditarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormEditarCliente.Designer.cs">
+      <DependentUpon>FormEditarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormListarClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormListarClientes.Designer.cs">
+      <DependentUpon>FormListarClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormListarVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI_Vendedor\FormListarVentas.Designer.cs">
+      <DependentUpon>FormListarVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI_Veterinario\AgregarMedicamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +221,9 @@
     <EmbeddedResource Include="UI_Administrador\FormCrearUsuario.resx">
       <DependentUpon>FormCrearUsuario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI_Administrador\FormEditarUsuario.resx">
+      <DependentUpon>FormEditarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI_Administrador\FormListarUsuario.resx">
       <DependentUpon>FormListarUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +232,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI_Gerente\FormReportes.resx">
       <DependentUpon>FormReportes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Vendedor\FormBuscarCliente.resx">
+      <DependentUpon>FormBuscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Vendedor\FormComprasCliente.resx">
+      <DependentUpon>FormComprasCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Vendedor\FormCrearVenta.resx">
+      <DependentUpon>FormCrearVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Vendedor\FormCrearCliente.resx">
+      <DependentUpon>FormCrearCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Vendedor\FormDetalleVenta.resx">
+      <DependentUpon>FormDetalleVenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Vendedor\FormDetalleVentaCliente.resx">
+      <DependentUpon>FormDetalleVentaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Vendedor\FormEditarCliente.resx">
+      <DependentUpon>FormEditarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Vendedor\FormListarClientes.resx">
+      <DependentUpon>FormListarClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI_Vendedor\FormListarVentas.resx">
+      <DependentUpon>FormListarVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI_Vendedor\FormPanelVendedor.resx">
       <DependentUpon>FormPanelVendedor.cs</DependentUpon>

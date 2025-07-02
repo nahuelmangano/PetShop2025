@@ -46,7 +46,7 @@ namespace DAL
                         Email = fila["Email"].ToString(),
                         DNI = Convert.ToInt32(fila["ClienteDNI"]),
                         Perfil = new BE.Perfil
-                        {
+    {
                             ID = Convert.ToInt32(fila["PerfilId"])
                         }
                     }

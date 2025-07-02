@@ -71,6 +71,13 @@ namespace BE
             set { _esterilizada = value; }
         }
 
+        private int _clienteId;
+        public int ClienteId
+        {
+            get { return _clienteId; }
+            set { _clienteId = value; }
+        }
+
         private List<HistoriaClinica> _historiasClinicas;
         public List<HistoriaClinica> HistoriasClinicas
         {

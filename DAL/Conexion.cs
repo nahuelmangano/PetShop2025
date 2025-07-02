@@ -24,7 +24,9 @@ namespace DAL
          */
         private void Conectar()
         {   // HACK: Cadena de conexión hardcodeada. Luego ponerla como parametro de configuración del proyecto u otra alternativa.
-            strCadenaDeConexion = @"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=DB_Petshop2025;Data Source=.\SQLEXPRESS";
+            //strCadenaDeConexion = @"Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=PetShop_2025;Data Source=.\SQLEXPRESS";
+            strCadenaDeConexion = @"Integrated Security = SSPI; Persist Security Info=False;User ID=sa;Initial Catalog=DB_Petshop2025;Data Source=NB-10";
+
 
             //Instanció un objeto del tipo SqlConnection
             objConexion = new SqlConnection();

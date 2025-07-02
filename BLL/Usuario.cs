@@ -42,7 +42,7 @@ namespace BLL
         {
 
             DAL.Usuario dalUsuario = new DAL.Usuario();
-            dalUsuario.modificar(usuario);
+            dalUsuario.ActualizarUsuario(usuario);
 
             return true;
 

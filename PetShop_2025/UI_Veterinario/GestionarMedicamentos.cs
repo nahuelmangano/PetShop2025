@@ -22,6 +22,7 @@ namespace PetShop_2025.UI_Veterinario
         private void btnAgregarMedicamento_Click(object sender, EventArgs e)
         {
             Form formAgregarMedicamento = new UI_Veterinario.AgregarMedicamento();
+            this.Hide();
             formAgregarMedicamento.ShowDialog();
             CargarDGVListaMedicamentos();
         }

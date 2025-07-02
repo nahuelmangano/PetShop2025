@@ -18,11 +18,26 @@ namespace PetShop_2025
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Inicializo el formulario de login
-            //Application.Run(new UI_LogIn.FormLogIn());
+            while (true)
+            {
+                using (var loginForm = new UI_LogIn.FormLogIn())
+                {
+                    var result = loginForm.ShowDialog();
 
-            // Abrir el formulario que se necesite
-            Application.Run(new UI_Veterinario.MenuPrincipal());
+                    if (result != DialogResult.OK || loginForm.UsuarioAutenticado == null)
+                        break; // Usuario cerró login o falló => salir
+
+                    // Abro el formulario que corresponde al perfil
+                    Form mainForm = loginForm.ObtenerFormularioPorPerfil();
+
+                    if (mainForm == null)
+                        break;
+
+                    Application.Run(mainForm); // Ejecuta hasta que se cierre
+
+                    // Al cerrar, se vuelve al login
+                }
+            }
         }
     }
 }

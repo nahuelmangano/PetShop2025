@@ -30,6 +30,7 @@
         {
             this.dgwListarUsuarios = new System.Windows.Forms.DataGridView();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btn_EditarUsuario = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgwListarUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,15 +49,26 @@
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 1;
-            this.btnSalir.Text = "Salir";
+            this.btnSalir.Text = "Atras";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btn_EditarUsuario
+            // 
+            this.btn_EditarUsuario.Location = new System.Drawing.Point(184, 391);
+            this.btn_EditarUsuario.Name = "btn_EditarUsuario";
+            this.btn_EditarUsuario.Size = new System.Drawing.Size(138, 23);
+            this.btn_EditarUsuario.TabIndex = 2;
+            this.btn_EditarUsuario.Text = "Editar Usuario";
+            this.btn_EditarUsuario.UseVisualStyleBackColor = true;
+            this.btn_EditarUsuario.Click += new System.EventHandler(this.btn_EditarUsuario_Click);
             // 
             // FormListarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_EditarUsuario);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.dgwListarUsuarios);
             this.Name = "FormListarUsuario";
@@ -70,5 +82,6 @@
 
         private System.Windows.Forms.DataGridView dgwListarUsuarios;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btn_EditarUsuario;
     }
 }

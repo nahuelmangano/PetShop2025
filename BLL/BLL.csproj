@@ -41,10 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Mascota.cs" />
+=======
+    <Compile Include="Clientes.cs" />
+>>>>>>> develop
     <Compile Include="Medicamento.cs" />
+    <Compile Include="Productos.cs" />
     <Compile Include="Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vendedor.cs" />
+    <Compile Include="Venta.cs" />
     <Compile Include="Vacuna.cs" />
     <Compile Include="VacunaAplicada.cs" />
   </ItemGroup>

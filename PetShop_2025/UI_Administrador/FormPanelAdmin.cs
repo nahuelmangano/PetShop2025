@@ -19,14 +19,14 @@ namespace PetShop_2025.UI_Administrador
 
         private void btnCrearUsuario_Click(object sender, EventArgs e)
         {
-            Form formularioDeUsuario = new UI_Administrador.FormCrearUsuario();
+            Form formularioDeUsuario = new UI_Administrador.FormCrearUsuario(this);
             this.Hide();
             formularioDeUsuario.ShowDialog();
         }
 
         private void btnListarUsuarios_Click(object sender, EventArgs e)
         {
-            Form formularioDeUsuario = new UI_Administrador.FormListarUsuario();
+            Form formularioDeUsuario = new UI_Administrador.FormListarUsuario(this);
             this.Hide();
             formularioDeUsuario.ShowDialog();
         }
@@ -34,6 +34,17 @@ namespace PetShop_2025.UI_Administrador
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnEditarUsuario_Click(object sender, EventArgs e)
+        {
+        
+
         }
     }
 }
