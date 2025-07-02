@@ -400,5 +400,5 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
-# Conexion.cs
-./DAL/Conexion.cs
+# Ignorar archivo de conexión
+DAL/Conexion.cs
