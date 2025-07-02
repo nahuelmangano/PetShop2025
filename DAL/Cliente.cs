@@ -22,7 +22,7 @@ namespace DAL
 
             SqlParameter[] parametros =
             {
-                db.crearParametro("@UsuarioId", cliente.UsuarioId),
+                db.crearParametro("@UsuarioId", cliente.ID),
                 db.crearParametro("@Nombre", cliente.Nombre),
                 db.crearParametro("@Apellido", cliente.Apellido),
                 db.crearParametro("@Email", cliente.Email),

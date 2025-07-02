@@ -18,7 +18,7 @@ namespace BLL
             {
                 BE.Cliente cliente = new BE.Cliente
                 {
-                    UsuarioId = Convert.ToInt32(fila["UsuarioId"]),
+                    ID = Convert.ToInt32(fila["UsuarioId"]),
                     DNI = Convert.ToInt64(fila["Dni"]),
 
                     //DescuentoPts = Convert.ToInt32(fila["Descuento_pts"]),

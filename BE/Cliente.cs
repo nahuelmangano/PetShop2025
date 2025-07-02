@@ -8,7 +8,7 @@ namespace BE
 {
     public class Cliente : Usuario
     {
-        public int UsuarioId { get; set; }
+       
         private long _dni;
         public long DNI
         {

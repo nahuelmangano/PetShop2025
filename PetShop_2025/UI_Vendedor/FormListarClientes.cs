@@ -45,7 +45,7 @@ namespace PetShop_2025.UI_Vendedor
             int usuarioId = Convert.ToInt32(dgvListarClientes.CurrentRow.Cells["UsuarioId"].Value);
 
             BLL.Cliente clienteBLL = new BLL.Cliente();
-            var cliente = clienteBLL.ObtenerClientes().FirstOrDefault(c => c.UsuarioId == usuarioId);
+            var cliente = clienteBLL.ObtenerClientes().FirstOrDefault(c => c.ID == usuarioId);
 
             if (cliente != null)
             {
