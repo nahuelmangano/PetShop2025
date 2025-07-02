@@ -119,7 +119,7 @@ namespace DAL
 
         public BE.Usuario ValidarUsuario(string email, string password)
         {
-            string nombreStoreProcedure = "sp_validar_usuario";
+            string nombreStoreProcedure = "usp_validar_usuario";
             SqlParameter[] parametros = new SqlParameter[2];
             Conexion objConexion = new Conexion();
             parametros[0] = objConexion.crearParametro("@Email", email);
