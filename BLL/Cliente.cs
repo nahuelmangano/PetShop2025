@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -43,8 +44,18 @@ namespace BLL
             return clienteDAL.BuscarClientes(criterio, valor);
         }
 
-
-
-
+        public BE.Cliente ObtenerClientePorDNI(int dni)
+        {
+            if (dni <= 0)
+            {
+                throw new ExcepcionDeNegocio("El DNI debe ser un número positivo.");
+            }
+            if (dni < 10000000 || dni > 99999999)
+            {
+                throw new ExcepcionDeNegocio("El DNI debe tener entre 8 dígitos.");
+            }
+            DAL.Cliente clienteDAL = new DAL.Cliente();
+            return clienteDAL.ObtenerClientePorDNI(dni);
+        }
     }
 }

@@ -43,7 +43,22 @@ namespace DAL
             return db.LeerPorStoreProcedure("sp_buscar_cliente", parametros);
         }
 
-
+        public BE.Cliente ObtenerClientePorDNI(int dni)
+        {
+            DataTable dt = BuscarClientes("DNI", dni.ToString());
+            if (dt.Rows.Count == 0)
+                return null;
+            DataRow fila = dt.Rows[0];
+            BE.Cliente cliente = new BE.Cliente
+            {
+                ID = Convert.ToInt32(fila["UsuarioId"]),
+                Nombre = fila["Nombre"].ToString(),
+                Apellido = fila["Apellido"].ToString(),
+                Email = fila["Email"].ToString(),
+                DNI = Convert.ToInt32(fila["Dni"]),
+            };
+            return cliente;
+        }
 
 
     }
