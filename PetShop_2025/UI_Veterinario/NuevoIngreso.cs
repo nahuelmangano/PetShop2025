@@ -37,12 +37,29 @@ namespace PetShop_2025.UI_Veterinario
             try
             {
                 int dni = (int)nudBuscarDNI.Value;
-                BE.Cliente cliente = new BLL.Cliente().BuscarClientePorDNI(dni);
-                if (cliente == null)
+                BE.Cliente clienteEncontrado = new BLL.Cliente().ObtenerClientePorDNI(dni);
+                if (clienteEncontrado is null)
                 {
-                    MessageBox.Show("No se encontró un cliente con ese DNI.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    // Si no se encontró el cliente, mostrar un mensaje
+                    MessageBox.Show("No se encontró un cliente con ese DNI. Complete los datos para ingresarlo al sistema.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    gBoxDatosCliente.Enabled = true;
                     return;
                 }
+                else 
+                {
+                    // Entonces se encontró el cliente, mostrar sus datos
+                    MessageBox.Show("Cliente encontrado.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Asignar los datos del cliente a los controles del formulario
+                    tBoxNombre.Text = clienteEncontrado.Nombre;
+                    tBoxApellido.Text = clienteEncontrado.Apellido;
+                    nudDNI.Text = clienteEncontrado.DNI.ToString();
+                    tBoxEmail.Text = clienteEncontrado.Email;
+                    
+                }
+                    BE.Cliente cliente = new BE.Cliente();
+                int primeraFila = 0;
+
+
                 gBoxDatosCliente.Enabled = true;
                 txtNombre.Text = cliente.Nombre;
                 txtApellido.Text = cliente.Apellido;
