@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BE;
+using BLL;
 
 namespace PetShop_2025.UI_Vendedor
 {
@@ -31,7 +32,7 @@ namespace PetShop_2025.UI_Vendedor
 
         private void CargarComboClientes()
         {
-            BLL.Clientes clienteBLL = new BLL.Clientes();
+            BLL.Cliente clienteBLL = new BLL.Cliente();
             List<BE.Cliente> listaClientes = clienteBLL.ObtenerClientes();
 
             cbClientes.DataSource = clienteBLL.ObtenerClientes();

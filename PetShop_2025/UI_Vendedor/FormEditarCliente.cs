@@ -25,22 +25,22 @@ namespace PetShop_2025.UI_Vendedor
 
         private void CargarDatos()
         {
-            txtNombre.Text = cliente.Usuario.Nombre;
-            txtApellido.Text = cliente.Usuario.Apellido;
-            txtMail.Text = cliente.Usuario.Email;
-            txtDni.Text = cliente.Dni;
-            nudDescuento.Value = cliente.DescuentoPts;
+            txtNombre.Text = cliente.Nombre;
+            txtApellido.Text = cliente.Apellido;
+            txtMail.Text = cliente.Email;
+            txtDni.Text = cliente.DNI.ToString();
+            //nudDescuento.Value = cliente.DescuentoPts;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            cliente.Usuario.Nombre = txtNombre.Text.Trim();
-            cliente.Usuario.Apellido = txtApellido.Text.Trim();
-            cliente.Usuario.Email = txtMail.Text.Trim();
-            cliente.Dni = txtDni.Text.Trim();
-            cliente.DescuentoPts = (int)nudDescuento.Value;
+            cliente.Nombre = txtNombre.Text.Trim();
+            cliente.Apellido = txtApellido.Text.Trim();
+            cliente.Email = txtMail.Text.Trim();
+            cliente.DNI = Convert.ToInt32(txtDni.Text.Trim());
+            //cliente.DescuentoPts = (int)nudDescuento.Value;
 
-            BLL.Clientes clienteBLL = new BLL.Clientes();
+            BLL.Cliente clienteBLL = new BLL.Cliente();
             bool actualizado = clienteBLL.ActualizarCliente(cliente);
 
             if (actualizado)
