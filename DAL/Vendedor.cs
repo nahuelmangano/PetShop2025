@@ -29,7 +29,7 @@ namespace DAL
                 int nuevoUsuarioId = ObtenerIdPorEmail(usuario.Email);
                 if (nuevoUsuarioId > 0)
                 {
-                    // Insertar en Clientes
+                    // Insertar en Cliente
                     SqlParameter[] parametrosCliente = new SqlParameter[3];
                     parametrosCliente[0] = objConexion.crearParametro("@usuarioId", nuevoUsuarioId);
                     parametrosCliente[1] = objConexion.crearParametro("@dni", dni);

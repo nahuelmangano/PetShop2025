@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class Clientes
+    public class Cliente
     {
         public DataTable ListarClientes()
         {
@@ -22,12 +22,11 @@ namespace DAL
 
             SqlParameter[] parametros =
             {
-                db.crearParametro("@UsuarioId", cliente.UsuarioId),
-                db.crearParametro("@Nombre", cliente.Usuario.Nombre),
-                db.crearParametro("@Apellido", cliente.Usuario.Apellido),
-                db.crearParametro("@Email", cliente.Usuario.Email),
-                db.crearParametro("@Dni", cliente.Dni),
-                db.crearParametro("@Descuento_pts", cliente.DescuentoPts)
+                db.crearParametro("@UsuarioId", cliente.ID),
+                db.crearParametro("@Nombre", cliente.Nombre),
+                db.crearParametro("@Apellido", cliente.Apellido),
+                db.crearParametro("@Email", cliente.Email),
+                db.crearParametro("@Dni", cliente.DNI),
             };
 
             db.EscribirPorStoreProcedure("sp_actualizar_cliente", parametros);

@@ -19,7 +19,7 @@ namespace DAL
             db.crearParametro("@Fecha", venta.Fecha),
             db.crearParametro("@Descuento", venta.Descuento),
             db.crearParametro("@EmpleadoId", venta.Empleado.ID),
-            db.crearParametro("@ClienteId", venta.Cliente.UsuarioId)
+            db.crearParametro("@ClienteId", venta.Cliente.ID)
         };
 
             // Primero insertás la venta
