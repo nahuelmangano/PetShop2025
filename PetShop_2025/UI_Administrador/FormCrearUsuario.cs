@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,6 +27,8 @@ namespace PetShop_2025.UI_Administrador
 
             try
             {
+                ValidarCamposUsuario();
+             
                 // Cargar datos del formulario al objeto usuario
                 nuevoUsuario.Nombre = txtNombre.Text.Trim();
                 nuevoUsuario.Apellido = txtApellido.Text.Trim();
@@ -64,6 +67,30 @@ namespace PetShop_2025.UI_Administrador
             //Form formularioDePanelAdmin = new UI_Administrador.FormPanelAdmin();    
             this.Close();
             formularioAnterior.Show();
+        }
+        private void ValidarCamposUsuario()
+        {
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))   //Nombre del usuario
+            {
+                throw new BE.ExcepcionDeNegocio("El campo 'nombre' del usuario es obligatorio.");
+            }
+            if (string.IsNullOrWhiteSpace(txtApellido.Text)) //Apellido del usuario
+            {
+                throw new BE.ExcepcionDeNegocio("El campo 'Apellido' del usuario es obligatorio.");
+            }
+            if (string.IsNullOrWhiteSpace(txtEmail.Text)) // Mail del usuario
+            {
+                throw new BE.ExcepcionDeNegocio("El campo 'Email' del usuario es obligatorio.");
+            }
+            if (string.IsNullOrWhiteSpace(txtContraseña.Text)) // Contraseña
+            {
+                throw new BE.ExcepcionDeNegocio("El campo 'Contraseña' del usuario es obligatorio.");
+            }
+            if ((int)nudPerfilUsuario.Value < 1 || (int)nudPerfilUsuario.Value > 5)
+            {
+                MessageBox.Show("El perfil ingresado es incorrecto. Debe ser un número entre 1 y 5.");
+                return;
+            }
         }
     }
 }

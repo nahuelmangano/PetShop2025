@@ -39,7 +39,7 @@ namespace PetShop_2025.UI_Vendedor
                 return;
             }
 
-            BLL.Clientes clienteBLL = new BLL.Clientes();
+            BLL.Cliente clienteBLL = new BLL.Cliente();
             DataTable resultados = clienteBLL.BuscarClientes(criterio, valor);
 
             if (resultados.Rows.Count == 0)

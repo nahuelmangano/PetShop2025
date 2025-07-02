@@ -27,7 +27,7 @@ namespace DAL
         */
         public bool CrearUsuario(BE.Usuario usuario)
         {
-            string nombreStoreProcedure = "sp_insertar_usuario";
+            string nombreStoreProcedure = "usp_insertar_usuario";
             SqlParameter[] parametros = new SqlParameter[5];
             Conexion objConexion = new Conexion();
 
@@ -88,7 +88,7 @@ namespace DAL
 
 
             List<BE.Usuario> listaDeRetorno = new List<BE.Usuario>();
-            string nombreStoreProcedure = "sp_listar_usuarios";
+            string nombreStoreProcedure = "usp_listar_usuarios";
             Conexion objConexion = new Conexion();
 
             DataTable dt = objConexion.LeerPorStoreProcedure(nombreStoreProcedure);
@@ -119,7 +119,7 @@ namespace DAL
 
         public BE.Usuario ValidarUsuario(string email, string password)
         {
-            string nombreStoreProcedure = "sp_validar_usuario";
+            string nombreStoreProcedure = "usp_validar_usuario";
             SqlParameter[] parametros = new SqlParameter[2];
             Conexion objConexion = new Conexion();
             parametros[0] = objConexion.crearParametro("@Email", email);
@@ -144,7 +144,7 @@ namespace DAL
         }
 
         public bool ActualizarUsuario(BE.Usuario usuario) {
-            string nombreStoreProcedure = "sp_EditarUsuario";
+            string nombreStoreProcedure = "usp_EditarUsuario";
             SqlParameter[] parametros = new SqlParameter[6];
             Conexion objConexion = new Conexion();
 

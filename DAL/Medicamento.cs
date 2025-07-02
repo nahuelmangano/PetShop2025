@@ -17,7 +17,7 @@ namespace DAL
             try
             {
                 SqlParameter[] parametros = new SqlParameter[] { };
-                DataTable tabla = conexion.LeerPorStoreProcedure("sp_listar_medicamentos", parametros);
+                DataTable tabla = conexion.LeerPorStoreProcedure("usp_listar_medicamentos", parametros);
                 List<BE.Medicamento> listaMedicamentos = new List<BE.Medicamento>();
 
                 foreach (DataRow fila in tabla.Rows)
@@ -51,7 +51,7 @@ namespace DAL
 
         public bool InsertarMedicamento(BE.Medicamento unMedicamento) {
             
-                string nombreStoreProcedure = "sp_insertar_medicamento";
+                string nombreStoreProcedure = "usp_insertar_medicamento";
 
                 SqlParameter[] parametros = new SqlParameter[]
                 {

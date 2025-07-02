@@ -6,25 +6,27 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class Cliente
+    public class Cliente : Usuario
     {
-        public int UsuarioId { get; set; } // igual al Id generado en Usuarios
-        public string Dni { get; set; }
-        public int DescuentoPts { get; set; } = 0;
-
-        public Usuario Usuario { get; set; }  // propiedad para acceder a los datos del usuario
+        public int UsuarioId { get; set; }
+        private long _dni;
+        public long DNI
+        {
+            get { return _dni; }
+            set { _dni = value; }
+        }
 
         private List<Mascota> _mascotas;
-        public List<Mascota> Mascotas {
+        public List<Mascota> Mascotas
+        {
             get { return _mascotas; }
             set { _mascotas = value; }
         }
+
         public override string ToString()
         {
-           
-            return $"{Usuario.Nombre} {Usuario.Apellido}";
+            return $"{Nombre} {Apellido} - {DNI}";
         }
-        public string NombreCompleto => $"{Usuario.Nombre} {Usuario.Apellido}";
 
     }
 }

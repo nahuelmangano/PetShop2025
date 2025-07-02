@@ -12,7 +12,7 @@ namespace DAL
     {
         public bool CrearCliente(BE.Usuario usuario, string dni)
         {
-            string nombreStoreProcedure = "sp_insertar_usuario";
+            string nombreStoreProcedure = "usp_insertar_usuario";
             SqlParameter[] parametros = new SqlParameter[5];
             Conexion objConexion = new Conexion();
 

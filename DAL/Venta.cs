@@ -23,7 +23,7 @@ namespace DAL
         };
 
             // Primero insertás la venta
-            db.EscribirPorStoreProcedure("sp_insertar_venta", parametrosVenta);
+            db.EscribirPorStoreProcedure("usp_insertar_venta", parametrosVenta);
 
             // Luego obtenés el último ID insertado (NO recomendado en apps multiusuario)
             DataTable dt = db.LeerPorComando("SELECT MAX(Id) FROM Ventas");
@@ -39,7 +39,7 @@ namespace DAL
                 db.crearParametro("@Cantidad", detalle.Cantidad)
             };
 
-                db.EscribirPorStoreProcedure("sp_insertar_detalle_venta", parametrosDetalle);
+                db.EscribirPorStoreProcedure("usp_insertar_detalle_venta", parametrosDetalle);
             }
 
             return true;
@@ -47,7 +47,7 @@ namespace DAL
         public DataTable ObtenerVentasConTotales()
         {
             Conexion db = new Conexion();
-            return db.LeerPorStoreProcedure("sp_listar_ventas_con_total");
+            return db.LeerPorStoreProcedure("usp_listar_ventas_con_total");
         }
 
         public DataTable ObtenerDetalleVenta(int ventaId)
@@ -59,7 +59,7 @@ namespace DAL
                 db.crearParametro("@VentaId", ventaId)
             };
 
-            return db.LeerPorStoreProcedure("sp_ver_detalle_venta", parametros);
+            return db.LeerPorStoreProcedure("usp_ver_detalle_venta", parametros);
         }
         public DataTable ObtenerVentasPorCliente(int clienteId)
         {
@@ -68,7 +68,7 @@ namespace DAL
         db.crearParametro("@ClienteId", clienteId)
     };
 
-            return db.LeerPorStoreProcedure("sp_ventas_por_cliente", parametros);
+            return db.LeerPorStoreProcedure("usp_ventas_por_cliente", parametros);
         }
 
 

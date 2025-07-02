@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class Clientes
+    public class Cliente
     {
         public List<BE.Cliente> ObtenerClientes()
         {
-            DataTable dt = new DAL.Clientes().ListarClientes();
+            DataTable dt = new DAL.Cliente().ListarClientes();
             List<BE.Cliente> lista = new List<BE.Cliente>();
 
             foreach (DataRow fila in dt.Rows)
@@ -19,17 +19,15 @@ namespace BLL
                 BE.Cliente cliente = new BE.Cliente
                 {
                     UsuarioId = Convert.ToInt32(fila["UsuarioId"]),
-                    Dni = fila["Dni"].ToString(),
-                    DescuentoPts = Convert.ToInt32(fila["Descuento_pts"]),
-                    Usuario = new BE.Usuario
-                    {
-                        ID = Convert.ToInt32(fila["UsuarioId"]),
-                        Nombre = fila["Nombre"].ToString(),
-                        Apellido = fila["Apellido"].ToString(),
-                        Email = fila["Email"].ToString(),
-                        Password = fila["Password"].ToString(),
-                        Perfil = new BE.Perfil { ID = Convert.ToInt32(fila["PerfilId"]) }
-                    }
+                    DNI = Convert.ToInt64(fila["Dni"]),
+
+                    //DescuentoPts = Convert.ToInt32(fila["Descuento_pts"]),
+                    Nombre = fila["Nombre"].ToString(),
+                    Apellido = fila["Apellido"].ToString(),
+                    Email = fila["Email"].ToString(),
+                    Password = fila["Password"].ToString(),
+                    
+                    
                 };
 
                 lista.Add(cliente);
@@ -40,12 +38,12 @@ namespace BLL
 
         public bool ActualizarCliente(BE.Cliente cliente)
         {
-            DAL.Clientes dal = new DAL.Clientes();
+            DAL.Cliente dal = new DAL.Cliente();
             return dal.ActualizarCliente(cliente);
         }
         public DataTable BuscarClientes(string criterio, string valor)
         {
-            DAL.Clientes clienteDAL = new DAL.Clientes();
+            DAL.Cliente clienteDAL = new DAL.Cliente();
             return clienteDAL.BuscarClientes(criterio, valor);
         }
 

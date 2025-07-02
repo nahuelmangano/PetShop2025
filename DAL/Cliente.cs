@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class Clientes
+    public class Cliente
     {
         public DataTable ListarClientes()
         {
             Conexion db = new Conexion();
-            return db.LeerPorStoreProcedure("sp_listar_clientes", null);
+            return db.LeerPorStoreProcedure("usp_listar_clientes", null);
         }
 
         public bool ActualizarCliente(BE.Cliente cliente)
@@ -23,14 +23,14 @@ namespace DAL
             SqlParameter[] parametros =
             {
                 db.crearParametro("@UsuarioId", cliente.UsuarioId),
-                db.crearParametro("@Nombre", cliente.Usuario.Nombre),
-                db.crearParametro("@Apellido", cliente.Usuario.Apellido),
-                db.crearParametro("@Email", cliente.Usuario.Email),
-                db.crearParametro("@Dni", cliente.Dni),
-                db.crearParametro("@Descuento_pts", cliente.DescuentoPts)
+                db.crearParametro("@Nombre", cliente.Nombre),
+                db.crearParametro("@Apellido", cliente.Apellido),
+                db.crearParametro("@Email", cliente.Email),
+                db.crearParametro("@Dni", cliente.DNI),
+                //db.crearParametro("@Descuento_pts", cliente.DescuentoPts)
             };
 
-            db.EscribirPorStoreProcedure("sp_actualizar_cliente", parametros);
+            db.EscribirPorStoreProcedure("usp_actualizar_cliente", parametros);
             return true;
         }
         public DataTable BuscarClientes(string criterio, string valor)
@@ -41,7 +41,7 @@ namespace DAL
             db.crearParametro("@Valor", valor)
             };
 
-            return db.LeerPorStoreProcedure("sp_buscar_cliente", parametros);
+            return db.LeerPorStoreProcedure("usp_buscar_cliente", parametros);
         }
 
 

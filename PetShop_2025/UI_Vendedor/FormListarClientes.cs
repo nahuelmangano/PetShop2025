@@ -21,7 +21,7 @@ namespace PetShop_2025.UI_Vendedor
         }
         private void CargarClientes()
         {
-            BLL.Clientes clienteBLL = new BLL.Clientes();
+            BLL.Cliente clienteBLL = new BLL.Cliente();
             dgvListarClientes.DataSource = clienteBLL.ObtenerClientes();
 
             dgvListarClientes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -44,7 +44,7 @@ namespace PetShop_2025.UI_Vendedor
 
             int usuarioId = Convert.ToInt32(dgvListarClientes.CurrentRow.Cells["UsuarioId"].Value);
 
-            BLL.Clientes clienteBLL = new BLL.Clientes();
+            BLL.Cliente clienteBLL = new BLL.Cliente();
             var cliente = clienteBLL.ObtenerClientes().FirstOrDefault(c => c.UsuarioId == usuarioId);
 
             if (cliente != null)

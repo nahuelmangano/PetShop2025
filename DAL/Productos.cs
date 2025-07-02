@@ -14,7 +14,7 @@ namespace DAL
             List<BE.Productos> lista = new List<BE.Productos>();
             Conexion db = new Conexion();
 
-            DataTable dt = db.LeerPorStoreProcedure("sp_listar_productos");
+            DataTable dt = db.LeerPorStoreProcedure("usp_listar_productos");
 
             foreach (DataRow fila in dt.Rows)
             {

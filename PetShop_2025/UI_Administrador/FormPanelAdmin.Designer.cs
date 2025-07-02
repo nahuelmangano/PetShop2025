@@ -76,7 +76,7 @@
             // 
             // btnListarUsuarios
             // 
-            this.btnListarUsuarios.Location = new System.Drawing.Point(324, 243);
+            this.btnListarUsuarios.Location = new System.Drawing.Point(324, 182);
             this.btnListarUsuarios.Name = "btnListarUsuarios";
             this.btnListarUsuarios.Size = new System.Drawing.Size(95, 23);
             this.btnListarUsuarios.TabIndex = 5;
